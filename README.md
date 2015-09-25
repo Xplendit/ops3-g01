@@ -4,7 +4,7 @@
 
 | Naam     | GitHub gebruikersnaam                   |
 | :---     | :---                                    |
-| student1 | [student1](https://github.com/student1) |
+| Jordi | [student1](https://github.com/Xplendit) |
 | student2 | [student2](https://github.com/student2) |
 | student3 | [student3](https://github.com/student3) |
 | student4 | [student4](https://github.com/student4) |
