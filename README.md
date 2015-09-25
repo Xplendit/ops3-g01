@@ -5,8 +5,8 @@
 | Naam     | GitHub gebruikersnaam                   |
 | :---     | :---                                    |
 | Jordi | [student1](https://github.com/Xplendit) |
-| student2 | [student2](https://github.com/student2) |
-| student3 | [student3](https://github.com/student3) |
+| Daan | [student2](https://github.com/DaanDelva) |
+| Lara | [student3](https://github.com/zwadderich) |
 | student4 | [student4](https://github.com/student4) |
 
 ## Gebruikte tools
