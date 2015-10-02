@@ -15,6 +15,6 @@
 * Tijdregistratie: <https://toggl.com/app/team/820013>
 
 ## Voor daan
-DO01: Linux
-DO02: Powershell
-DO03: Windows Server
+* DO01: Linux
+* DO02: Powershell
+* DO03: Windows Server
