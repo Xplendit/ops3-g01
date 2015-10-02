@@ -14,7 +14,7 @@ Doelstelling:
 	4. Reproduceerbare experimenten opzetten, resultaten correct analyseren en rapporteren
 
 
-###Opsetlling 1: Eenvoudige LAMP stack
+###Opstelling 1: Eenvoudige LAMP stack
 
 1. Opzetten LAMP stack
 	- [ ] Packages installeren (httpd, php, 'databank')
@@ -37,6 +37,17 @@ Doelstelling:
 4. Visualiseer het gedrag van de server
 5. Bestudeer de metrieken
 6. Zorg ervoor dat de opstelling reproduceerbaar is
+
+###Opstelling 2: Multi-tier webserver
+
+Doel: Webserver performanter maken. Herhaal bij elke stap de experimenten uit de eerste opstelling en bekijk het verschil. Probeer de belangrijkste bottleneck te bepalen en weg te werken.
+
+1. Webserversoftware vervangen door "perfomantere"
+2. Database op aparate machine zetten
+3. Parallele webserver + load balancer
+4. DNS als load-balancer
+5. Cache-systeem
+
 
 ### Testrapport
 
