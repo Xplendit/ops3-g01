@@ -67,12 +67,4 @@
 ### Student 3
 ### Student 4
 
-## Feedback analyseluik
-
-### Algemeen
-
-### Student 1
-### Student 2
-### Student 3
-### Student 4
 

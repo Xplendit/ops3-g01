@@ -2,12 +2,12 @@
 
 ## Groepsleden
 
-| Naam     | GitHub gebruikersnaam                   |
-| :---     | :---                                    |
-| Jordi | [student1](https://github.com/Xplendit) |
-| Daan | [student2](https://github.com/DaanDelva) |
-| Lara | [student3](https://github.com/zwadderich) |
-| Lucas | [student4](https://github.com/student4) |
+| Naam  | GitHub gebruikersnaam                       |
+| :---  | :---                                        |
+| Jordi | [Xplendit](https://github.com/Xplendit)     |
+| Daan  | [DaanDelva](https://github.com/DaanDelva)   |
+| Lara  | [zwadderich](https://github.com/zwadderich) |
+| Lucas | [???](https://github.com/student4)          |
 
 ## Gebruikte tools
 
