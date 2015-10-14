@@ -22,7 +22,7 @@ Er worden in de opgave geen ip adressen opgelegd, ik zal dus diegene uit het boe
 
 Een eerste aanpassing die ik moet doen is mijn toetsenbord naar azerty omzetten. Dit gaan eenvoudig via `Set-WinUserLanguageList -LanguageList NL-BE`.
 
-Eerst moeten we de huidige instellingen van de interface bekijken met `Get-NetIPInterface`. Daarna moeten we nieuwe ip informatie toevoegen adhv het `New-NetIPAdress`. De console vraagt daarna een helemaal parameters. Handig aan PS is dat je alle parameters kunt meegeven met je commando. Het volledige commando is dan: `New-NetIPAddress -AddressFamily IPv4 -IPAddress 10.10.10.10 -PrefixLength 24 -InterfaecAlias Ethernet`. Nadat je op enter drukt krijg je nog eens een summary van je actie. 
+Eerst moeten we de huidige instellingen van de interface bekijken met `Get-NetIPInterface`. Dit commando toont de interface namen met hun indexen die je daarna zult gebruiken om te configureren. Daarna moeten we nieuwe ip informatie toevoegen adhv het `New-NetIPAdress`. De console vraagt daarna een helemaal parameters. Handig aan PS is dat je alle parameters kunt meegeven met je commando. Het volledige commando is dan: `New-NetIPAddress -AddressFamily IPv4 -IPAddress 10.10.10.10 -PrefixLength 24 -InterfaecAlias Ethernet`. Nadat je op enter drukt krijg je nog eens een summary van je actie. 
 
 ![new-netipaddress](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/new-netipaddress.png?raw=true)
 
@@ -30,6 +30,15 @@ De DNS instellingen moeten nu ook ingegeven worden. Dit kun je opnieuw in één 
 Daarna stel je een default route in met het New-NetRoute commando: `New-NetRoute -DestinationPrefix "0.0.0.0/0" -NextHop "10.10.10.1" -InterfaceAlias Ethernet`. Hierna krijg je terug een summary van je actie: 
 
 ![new-NetRoute](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/new-netroute.png?raw=true)
+
+De -DestinationPrefix parameter geeft aan dat deze route als default route gebruikt zal worden. Als je geen core installatie doet kun je via de gui je instellingen controleren. Via ps doe ik het met `ipconfig /all`. Zoals je kunt zien zijn de instellingen mooi overgenomen. 
+
+![ipconfigall]()
+
+In de nabije toekomst zal ipv6 meer en meer de standaard worden. Daarom toon ik ook even hoe je ipv6 configureert. Momenteel kan deze nog 'samenleven/co-existen' met ipv4. 
+`Net-NetIpAddress -AddressFamily ipv6 -IPAddress 2001:db8:1::10 -PrefixLength 64 -interfaceAlias Ethernet`
+
+`New-NetRoute -DestinationPrefix ::/0 -NextHop 2001:db8:1::1 -InterfaceAlias Ethernet`
 
 
 
