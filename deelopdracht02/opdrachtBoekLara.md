@@ -33,9 +33,10 @@ Daarna stel je een default route in met het New-NetRoute commando: `New-NetRoute
 
 De -DestinationPrefix parameter geeft aan dat deze route als default route gebruikt zal worden. Als je geen core installatie doet kun je via de gui je instellingen controleren. Via ps doe ik het met `ipconfig /all`. Zoals je kunt zien zijn de instellingen mooi overgenomen. 
 
-![ipconfigall]()
+![ipconfigall](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/ipconfigall.png?raw=true)
 
 In de nabije toekomst zal ipv6 meer en meer de standaard worden. Daarom toon ik ook even hoe je ipv6 configureert. Momenteel kan deze nog 'samenleven/co-existen' met ipv4. 
+
 `Net-NetIpAddress -AddressFamily ipv6 -IPAddress 2001:db8:1::10 -PrefixLength 64 -interfaceAlias Ethernet`
 
 `New-NetRoute -DestinationPrefix ::/0 -NextHop 2001:db8:1::1 -InterfaceAlias Ethernet`
