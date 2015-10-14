@@ -55,6 +55,7 @@
 De lampstack als monitoring client opzetten en verschillende services toevoegen.
 ### Lara
 ### Jordi
+Alles documenteren, testen en testrapport maken.
 
 ## Waar hebben jullie nog problemen mee?
 
