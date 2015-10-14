@@ -1,6 +1,6 @@
 # Voortgangsrapport week nn
 
-* Groep: Groep 01
+* Groep:
 * Datum:
 
 | Student  | Aanw. | Opmerking |
@@ -14,32 +14,32 @@
 
 ### Algemeen
 
-[Afbeelding huidige toestand Kanban-bord(en) invoegen]
+![](http://i.imgur.com/4pMskNN.png)
 
-* ...
+* Lampstack volledig afgewerkt
 * ...
 
 [Afbeelding teamoverzicht tijdregistratie onderverdeeld per deelopdracht]
 
-### Student 1
+### Daan
 
 * ...
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 2
+### Lucas
 
 * ...
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 3
+### Lara
 
 * ...
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 4
+### Jordi
 
 * ...
 
@@ -61,7 +61,6 @@
 ## Feedback technisch luik
 
 ### Algemeen
-
 ### Student 1
 ### Student 2
 ### Student 3
