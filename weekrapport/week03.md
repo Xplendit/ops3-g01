@@ -1,7 +1,7 @@
-# Voortgangsrapport week nn
+# Voortgangsrapport week 03
 
-* Groep:
-* Datum:
+* Groep: 01
+* Datum: 09/10/2015
 
 | Student  | Aanw. | Opmerking |
 | :---     | :---  | :---      |
@@ -15,6 +15,7 @@
 ### Algemeen
 
 ![](http://i.imgur.com/4pMskNN.png)
+
 
 * Lampstack volledig afgewerkt
 * ...
@@ -30,9 +31,9 @@
 
 ### Lucas
 
-* ...
+* Monitoring server opgezet en opzoekwerk rond alle monitoring services gedaan.
 
-[Afbeelding individueel rapport tijdregistratie]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week3_Lucas_toggl.PNG)
 
 ### Lara
 
@@ -49,10 +50,11 @@
 ## Wat plan je volgende week te doen?
 
 ### Algemeen
-### Student 1
-### Student 2
-### Student 3
-### Student 4
+### Daan
+### Lucas
+De lampstack als monitoring client opzetten en verschillende services toevoegen.
+### Lara
+### Jordi
 
 ## Waar hebben jullie nog problemen mee?
 
@@ -62,9 +64,9 @@
 ## Feedback technisch luik
 
 ### Algemeen
-### Student 1
-### Student 2
-### Student 3
-### Student 4
+### Daan
+### Lucas
+### Lara
+### Jordi
 
 
