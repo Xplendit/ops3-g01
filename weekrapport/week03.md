@@ -33,7 +33,7 @@
 
 * Monitoring server opgezet en opzoekwerk rond alle monitoring services gedaan.
 
-![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week3_Lucas_toggl.PNG)
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week3_Lucas_Toggl.PNG)
 
 ### Lara
 
