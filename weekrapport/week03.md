@@ -41,9 +41,9 @@
 
 ### Jordi
 
-* ...
+* Ik heb ervoor gezorgd dat de database van Wordpress volledig automatisch wordt aangemaakt en ingevuld met lorem ipsum.
 
-[Afbeelding individueel rapport tijdregistratie]
+![](http://i.imgur.com/cT0Ltgk.png)
 
 ## Wat plan je volgende week te doen?
 
