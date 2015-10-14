@@ -62,6 +62,15 @@
 
 ### Algemeen
 
+* Goed Kanban-bord: opdeling in duidelijke deeltaken, werkverdeling
+* Weekrapporten?
+    * Vervang in sjabloon (en hier) "student x" door jullie namen
+* Linux:
+    * Nu gescheiden Vagrant-omgevingen voor collectd en lamp-stack. Maak 1 geïntegreerde omgeving!
+    * Ik mis taken ivm het selecteren van een test-tool en uitwerken scenario's
+
+Verwerk nieuwe issues [#15](https://huboard.com/HoGentTIN/ops3-g01/#/issues/111118691) en die gemarkeerd als geblokkeerd.
+
 ### Student 1
 ### Student 2
 ### Student 3
