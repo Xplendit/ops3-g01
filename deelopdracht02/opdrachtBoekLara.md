@@ -11,3 +11,7 @@ Net zoals in Linux kun je ook data pipen. Dit gebeurt met `|`. Dit is voor vele 
 
 ![filter](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/d0f5b297a0d48d8ad70a9a3010fb585a.png?raw=true)
 
+### 2. Managing Windows Network Services with PS ###
+*
+Aangezien we windows server volledig vanuit de core moeten opzetten en dit in het boek wordt uitgelegd zal ik deze twee opdrachten gedeeltelijk laten overlappen waardoor een aantal scripts overeen zullen komen. *
+Er worden in de opgave geen ip adressen opgelegd, ik zal dus diegene uit het boek nemen. 
