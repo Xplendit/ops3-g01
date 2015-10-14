@@ -57,6 +57,7 @@
 ### Lucas
 De lampstack als monitoring client opzetten en verschillende services toevoegen.
 ### Lara
+De core installatie verder aanmaken.
 ### Jordi
 Alles documenteren, testen en testrapport maken.
 
