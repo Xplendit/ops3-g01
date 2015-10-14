@@ -24,12 +24,12 @@ Een eerste aanpassing die ik moet doen is mijn toetsenbord naar azerty omzetten.
 
 Eerst moeten we de huidige instellingen van de interface bekijken met `Get-NetIPInterface`. Daarna moeten we nieuwe ip informatie toevoegen adhv het `New-NetIPAdress`. De console vraagt daarna een helemaal parameters. Handig aan PS is dat je alle parameters kunt meegeven met je commando. Het volledige commando is dan: `New-NetIPAddress -AddressFamily IPv4 -IPAddress 10.10.10.10 -PrefixLength 24 -InterfaecAlias Ethernet`. Nadat je op enter drukt krijg je nog eens een summary van je actie. 
 
-![new-netipaddress]()
+![new-netipaddress](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/new-netipaddress.png?raw=true)
 
 De DNS instellingen moeten nu ook ingegeven worden. Dit kun je opnieuw in één commando: `Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses "10.10.10.10","10.10.10.11"`. 
 Daarna stel je een default route in met het New-NetRoute commando: `New-NetRoute -DestinationPrefix "0.0.0.0/0" -NextHop "10.10.10.1" -InterfaceAlias Ethernet`. Hierna krijg je terug een summary van je actie: 
 
-![new-NetRoute]()
+![new-NetRoute](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/new-netroute.png?raw=true)
 
 
 
