@@ -47,6 +47,19 @@ In onderstaande printscreen kun je zien dat nu ook ipv6 geconfigureerd is.
 
 ![ipconfigallipv6](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/ipconfigallipv6.png?raw=true)
 
+#### 2.2 Installing DC ####
+De eerste stap is de Get-WIndowsFeature cmdlet uitvoeren. Handig aan PS zijn de wildcards, deze gebruik je door `*`. DC betekent Domain Controller, we kunnen dus de wildcard gebruiken om de Get-WindowsFeature te gebruiken. Eerst typ je `Get-WindowsFeature`, daarna 'pipe' je de uitvoer met de wildcard. De command wordt dan `Get-WindowsFeature | Where-Object Name -like *domain*`. Omdat domain omsingeld is door twee wildcard kan 'domain' zowel vooraan, middenin als achterin komen. Naast AD hebben we ook de dns services nodig. Opnieuw kun je dit zoeken met de pipe en wildcards. `Get-WindowsFeature | Where-Object Name -like *dns*`.Nu weten we precies welke cmdlet we moeten gebruiken: 
 
+![](domaindns)
 
+De volgende stap is installeren, volgens het boek moet je nu dit commando gebruiken: `Install-WindowsFeature AD-Domain-Services, DNS-IncludeManagementTools`. Dit commando werkt voor mij niet, dus heb ik beslist het op te splitsen in verschillende commando's om zo het probleem te vinden. De `Install-WindowsFeature AD-Domain-Services` werkt correct. 
 
+![](ADDS)
+
+Volgens het pipe/zoekcommando zijn er twee DNS commando's beschikbaar: DNS en RSAT-DNS-Server.
+
+![](dns)
+
+Vervolgens configureren we het domein/forest met het `Install-ADDSForest` commando. Het domein zullen we, zoals in het werkboek, 'PoliForma.nl' noemen. Het SafeModeAdministratorPassword zal ik 'Lara25472' noemen. Zoals hiervoor kun je dit ook in één commando doen `$SMPASS = ConvertTo-SecureString 'P@$$w0rd11' -AsPlainText -Force Install-ADDSForest -DomainName PoliForma.nl -SafeModeAdministratorPassword $SMPass -Confirm:$false`. De installatie duurt enkele minuten, daarna zal de machine, nu Domain Controller herstarten. 
+
+![](domainsuccess)
