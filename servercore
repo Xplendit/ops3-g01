@@ -1,0 +1,27 @@
+1. Naar azerty zetten: Set-WinUserLanguageList -LanguageList NL-BE
+2. sconfig.cmd 
+
+
+1. Netwerk
+	
+
+function IPCONFIGURATION{
+#tools
+$tools= 'RSAT-AD-Tools'
+Add-windowsfeature $tools
+
+
+ $ipaddress="192.168.101.10"
+ $ipprefix="24"
+ $ipgateway="192.168.101.1"
+ $ipdns="192.168.101.10"
+ $ipinterface=(Get-NetAdapter).ifindex
+ $interfacealias="Ethernet"
+ $defaultgw="192.168.101.1"
+ new-NetIPAddress -IPAddress $ipaddress -InterfaceAlias $interfacealias -AddressFamily IPv4
+
+    if(Get-NetAdapter -name like Ethernet) {
+        get-netadapter -Name Ethernet|Rename-NetAdapter -NewName AssengraafConnectie
+
+
+	}}
