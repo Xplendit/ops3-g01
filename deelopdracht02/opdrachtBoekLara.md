@@ -45,7 +45,7 @@ In de nabije toekomst zal ipv6 meer en meer de standaard worden. Daarom toon ik 
 
 In onderstaande printscreen kun je zien dat nu ook ipv6 geconfigureerd is. 
 
-![ipconfigallipv6]()
+![ipconfigallipv6](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/ipconfigallipv6.png?raw=true)
 
 
 
