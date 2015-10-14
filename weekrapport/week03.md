@@ -23,9 +23,10 @@
 
 ### Daan
 
-* ...
+* Ik ben begonnen met het schrijven van het powershell script, het netwerk wordt al aangemaakt en zijn ook al half begonnen met het maken van de AD.
 
-[Afbeelding individueel rapport tijdregistratie]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week3_Daan_toggle.PNG)
+
 
 ### Lucas
 
