@@ -37,9 +37,12 @@
 
 ### Lara
 
-* ...
+* Ik ben samen met daan begonnen met het maken van de AD
 
-[Afbeelding individueel rapport tijdregistratie]
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/laraweek3.png?raw=true)
+
+
 
 ### Jordi
 
