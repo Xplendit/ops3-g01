@@ -37,11 +37,15 @@ De -DestinationPrefix parameter geeft aan dat deze route als default route gebru
 
 In de nabije toekomst zal ipv6 meer en meer de standaard worden. Daarom toon ik ook even hoe je ipv6 configureert. Momenteel kan deze nog 'samenleven/co-existen' met ipv4. 
 
-`Net-NetIpAddress -AddressFamily ipv6 -IPAddress 2001:db8:1::10 -PrefixLength 64 -interfaceAlias Ethernet`
+`New-NetIpAddress -AddressFamily ipv6 -IPAddress 2001:db8:1::10 -PrefixLength 64 -interfaceAlias Ethernet`
 
 `New-NetRoute -DestinationPrefix ::/0 -NextHop 2001:db8:1::1 -InterfaceAlias Ethernet`
 
+`Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses "2001:db8:1::10","2001:db8:1::1"`
 
+In onderstaande printscreen kun je zien dat nu ook ipv6 geconfigureerd is. 
+
+![ipconfigallipv6]()
 
 
 
