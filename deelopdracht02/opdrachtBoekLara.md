@@ -64,4 +64,19 @@ Vervolgens configureren we het domein/forest met het `Install-ADDSForest` comman
 
 ![domainsuccess](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/domainsuccess.png?raw=true)
 
-Natuurlijk zullen er werkstations aan het domein moeten toegevoegd worden. Ook dit is zeer eenvoudig in PS te doen. 
+Natuurlijk zullen er werkstations aan het domein moeten toegevoegd worden. Ook dit is zeer eenvoudig in PS te doen met 
+
+`$secString = ConvertTo-SecureString 'P@$$w0rd11' -AsPlainText -Force`
+
+`$myCred = New-Object -TypeName PSCredential -ArgumentList "PoliForma\administrator", $secString`
+
+`Add-Computer -DomainName "PoliForma.nl" -Credential $myCred -NewName "WS2012WS" -Restart`
+
+Als je een tweede machine wilt promoten tot DC geef je dit in: 
+
+![dcpromo2]()
+
+(Dit is niet nodig voor de opdracht, maar willen we toch even meegeven.)
+
+
+
