@@ -78,5 +78,18 @@ Als je een tweede machine wilt promoten tot DC geef je dit in:
 
 (Dit is niet nodig voor de opdracht, maar willen we toch even meegeven.)
 
+#### 2.3 Configuring DNS zones ####
 
+In één van de vorige stappen hebben we de dns modules geïnstalleerd. Nu kunnen we dus makkelijk dns configureren. Eerst zullen we dns reverse lookup zones creëren: 
 
+![dnsreverselookup]()
+
+Daarna creëren we een primaire zone met statische records. De moeilijkheid met het boek is dat we hier onze computernaam moeten ingeven. Deze is makkelijk te vinden door het commando fout in te voeren. De foutmelding geeft dan de servernaam mee. Een andere manier is het commando `Hostname` in te voeren.
+
+![zonefilefout]()
+
+Het kan makkelijker zijn om in plaats van iedere keer bv: WIN-A27TjDB8203B in te voeren gewoon je computernaam te veranderen. Dit is ook zeer eenvoudig te doen met het `Rename-Computer` commando. Ik heb nu de computernaam veranderd naar **PoliFormaSv**.
+
+Nu zal het eenvoudiger zijn om de -ZoneName parameter te gebruiken. Nu voegen we een A record toe met het commando `Add-DnsServerResourceRecordA -ZoneName PoliForma.nl -Name www - IPv4Address 192.168.20.54 -CreatePtr`. Daarnaast geeft het boek ook nog voorbeelden om een conditional forwarder en secondary zone te creëren. Of het aanmaken van de zones wel effectief gebeurd is kun je controleren door het `Get-DnsServerZone` commande in te voeren. 
+
+#### 2.4 Configuring DHCP scopes ####
