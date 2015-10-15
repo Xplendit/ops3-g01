@@ -96,11 +96,10 @@ Nu zal het eenvoudiger zijn om de -ZoneName parameter te gebruiken. Nu voegen we
 
 Zoals de installatie van dns moet je eerst kijken welke features er beschikbaar zijn. Dit met het Get-WindowsFeature commando, dat je daarna filters. Eenmaal dit gebeurd is weet je exact welke features je kunt installeren met het Install-WindowsFeature commando.
 
-![dhcpinstall]()
+![dhcpinstall](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/dhcpinstall.png?raw=true)
 
-Eerst voeg je een scope toe met het Add-dhcpserverv4scope commando, daarna stel je de values in. Als laatste stap moet je de dhcp scope activeren. 
+Eerst voeg je een scope toe met het Add-dhcpserverv4scope commando, daarna stel je de values in. Als laatste stap moet je de dhcp scope activeren met het `Add-DhcpServerInDc -DnsName PoliForma.nl`. 
 
 
 ![scope1]()
 
-![scope2]()
