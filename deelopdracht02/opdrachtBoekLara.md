@@ -100,6 +100,10 @@ Zoals de installatie van dns moet je eerst kijken welke features er beschikbaar 
 
 Eerst voeg je een scope toe met het Add-dhcpserverv4scope commando, daarna stel je de values in. Als laatste stap moet je de dhcp scope activeren met het `Add-DhcpServerInDc -DnsName PoliForma.nl`. 
 
+![scope1](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/scope1.png?raw=true)
 
-![scope1]()
+Het boek geeft nog twee extra's mee, dee zijn dhcp reservaties en dhcp exclusions. Voor de volledigheid zet ik de commando's hieronder:
 
+![dhcpextra]()
+
+#### 2.5 Building out a PKI environment ####
