@@ -104,13 +104,13 @@ Eerst voeg je een scope toe met het Add-dhcpserverv4scope commando, daarna stel 
 
 Het boek geeft nog twee extra's mee, dee zijn dhcp reservaties en dhcp exclusions. Voor de volledigheid zet ik de commando's hieronder:
 
-![dhcpextra]()
+![dhcpextra](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/dhcpextra.png?raw=true)
 
 #### 2.5 Building out a PKI environment ####
 
 Nu zullen we Certificate Authority instellen. PKI staat voor Private Key Infrastructure. Eerst zoeken we terug de gepaste WindowsFeature. Daarna configureren we de features. Daarna configureren we de server als een enterprise CA. 
 
-![cert]()
+![cert](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/cert.png?raw=true)
 
 Vervolgens voer je `Certutil -pulse` uit, dit downloadt en installeert de root CA naar de trusted root CA store. 
 
@@ -122,4 +122,7 @@ We zullen, als voorbeeld, mezelf toevoegen als user. Dit gaat eenvoudig met het 
 
 De eerste stappen zijn conform aan de vorige punten. Eerst zoeken we terug de juist WindowsFeature, daarna installeren we de WF met het `intall-WindowsFeature Web-WebServer -IncludeManagementTools`. Daarna importeren we de WebAdministration module met `Import-Module WebAdministration`. Daarna bekijk je het resultaat met het Get-ChildItem commando. 
 
-![iisinstall]()
+![iisinstall](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/iisinstall.png?raw=true)
+
+#### 3.1 Configuring IIS for SSL ####
+
