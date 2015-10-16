@@ -33,6 +33,16 @@ wordpress_password: WopWop
 wordpress_plugins: 
   - name: demo-data-creator
     version: ''
-mariadb_init_scripts:
-  - database: wordpress
-    script: init.sql
+# mariadb_init_scripts:
+  # - database: wordpress
+    # script: init.sql
+
+collectd_plugins:
+  plugin: "load"
+  plugin: "memory"
+  
+collectd_plugins_multi:
+  interface: {Interface: "eth0"}
+  disk: {Disk: "sda"}
+  network: {Server: "192.168.56.10"}
+  

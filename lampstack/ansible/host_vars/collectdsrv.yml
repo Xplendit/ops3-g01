@@ -1,0 +1,19 @@
+# host_vars/collectdsrv.yml
+# Variables visible to all nodes
+---
+el7_install_packages:
+  - python
+  - pycairo
+  - mod_wsgi
+  - kobo-django
+  - python-ldap
+  - python-memcached
+  #- python-sqlite2
+collectd_plugins:
+  plugin: "load"
+  plugin: "memory"
+collectd_plugins_multi:
+  rrdtool: {Datadir: "/var/lib/collectd/rrd"}
+  network: {Listen: "{ansible_eth0.ipv4.address}"}
+  write_graphite: {Host: "10.8.0.15", Port: "2003"}
+tags: ["collectd"]

@@ -9,3 +9,11 @@
     - bertvv.mariadb
     - bertvv.wordpress
     - phpmyadmin
+    - collectd
+
+- hosts: collectdsrv
+  sudo: true
+  roles:
+    - bertvv.el7
+    - collectd
+    - graphite
