@@ -40,7 +40,7 @@
 * Ik ben samen met daan begonnen met het maken van de AD
 
 
-![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/laraweek3.png?raw=true)
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/lara4.png?raw=true)
 
 
 
