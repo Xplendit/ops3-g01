@@ -107,3 +107,19 @@ Het boek geeft nog twee extra's mee, dee zijn dhcp reservaties en dhcp exclusion
 ![dhcpextra]()
 
 #### 2.5 Building out a PKI environment ####
+
+Nu zullen we Certificate Authority instellen. PKI staat voor Private Key Infrastructure. Eerst zoeken we terug de gepaste WindowsFeature. Daarna configureren we de features. Daarna configureren we de server als een enterprise CA. 
+
+![cert]()
+
+Vervolgens voer je `Certutil -pulse` uit, dit downloadt en installeert de root CA naar de trusted root CA store. 
+
+#### 2.6 Creating AD users ####
+
+We zullen, als voorbeeld, mezelf toevoegen als user. Dit gaat eenvoudig met het `New-ADUser -Name LDelange` commando. Het boek geeft daarnaast een functie mee op meerdere gebruikers toe te voegen. 
+
+### 3. Managing IIS with PS ###
+
+De eerste stappen zijn conform aan de vorige punten. Eerst zoeken we terug de juist WindowsFeature, daarna installeren we de WF met het `intall-WindowsFeature Web-WebServer -IncludeManagementTools`. Daarna importeren we de WebAdministration module met `Import-Module WebAdministration`. Daarna bekijk je het resultaat met het Get-ChildItem commando. 
+
+![iisinstall]()
