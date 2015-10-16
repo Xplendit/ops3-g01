@@ -54,6 +54,7 @@
 
 ### Algemeen
 ### Daan
+PowerShell script verder uitwerken met DHCP en DNS + OU's aanmaken
 ### Lucas
 De lampstack als monitoring client opzetten en verschillende services toevoegen.
 ### Lara
