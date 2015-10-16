@@ -11,7 +11,7 @@ New-NetIPAddress `
  -ServerAddresses 192.168.10.2
 
  #Rename computer
- $Computername= "test123"
+ $Computername= "AsSv1"
  Rename-Computer $Computername
  
 
@@ -22,6 +22,11 @@ New-NetIPAddress `
  Install-ADDSForest -CreateDnsDelegation:$false -DomainMode "Win2012R2" -DomainName "Assengraaf.nl" -ForestMode "Win2012R2" -NoRebootOnCompletion:$false -InstallDns:$true
   
  #Install DHCP
+ Install-WindowsFeature –Name DHCP
+ Install-WindowsFeature –Name RSAT-DHCP
+ Set-DhcpServerv4Binding -BindingState $true -InterfaceAlias “Ethernet”
+ Add-DhcpServerInDC -DnsName “AsSv1.Assengraaf.nl”
+ Add-DhcpServerv4Scope -Name "Assengraafscope" -StartRange 192.168.10.30 -EndRange 192.168.10.130 -SubnetMask 255.255.255.0
 
 
 
