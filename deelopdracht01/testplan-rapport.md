@@ -1,11 +1,11 @@
 ##Testplan en -rapport: LAMP stack
 
-* Verantwoordelijke uitvoering: NAAM
-* Verantwoordelijke testen: NAAM
+* Verantwoordelijke uitvoering: Lucas en Jordi
+* Verantwoordelijke testen: Lara en Daan
 
 ###Testplan
 
-Auteur(s) testplan: Lucas
+Auteur(s) testplan: Lucas, Jordi
 
 Doelstelling:  
 	1. Performante webserver opzetten met high availability  
