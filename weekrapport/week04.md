@@ -1,7 +1,7 @@
-# Voortgangsrapport week nn
+# Voortgangsrapport week 03
 
-* Groep:
-* Datum:
+* Groep: 01
+* Datum: 09/10/2015
 
 | Student  | Aanw. | Opmerking |
 | :---     | :---  | :---      |
@@ -14,44 +14,52 @@
 
 ### Algemeen
 
-[Afbeelding huidige toestand Kanban-bord(en) invoegen]
+![](http://i.imgur.com/4pMskNN.png)
 
-* ...
-* ...
 
-[Afbeelding teamoverzicht tijdregistratie onderverdeeld per deelopdracht]
-
-### Student 1
-
+* Lampstack volledig afgewerkt
 * ...
 
-[Afbeelding individueel rapport tijdregistratie]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/teamweek4.PNG)
 
-### Student 2
+### Daan
 
-* ...
+* Ik ben begonnen met het schrijven van het powershell script, het netwerk wordt al aangemaakt en zijn ook al half begonnen met het maken van de AD.
 
-[Afbeelding individueel rapport tijdregistratie]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week3_Daan_toggle.PNG)
 
-### Student 3
 
-* ...
+### Lucas
 
-[Afbeelding individueel rapport tijdregistratie]
+* Monitoring server opgezet en opzoekwerk rond alle monitoring services gedaan.
 
-### Student 4
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week3_Lucas_Toggl.PNG)
 
-* ...
+### Lara
 
-[Afbeelding individueel rapport tijdregistratie]
+* Ik ben samen met daan begonnen met het maken van de AD
+
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/laraweek3.png?raw=true)
+
+
+
+### Jordi
+
+* Ik heb ervoor gezorgd dat de database van Wordpress volledig automatisch wordt aangemaakt en ingevuld met lorem ipsum.
+
+![](http://i.imgur.com/cT0Ltgk.png)
 
 ## Wat plan je volgende week te doen?
 
 ### Algemeen
-### Student 1
-### Student 2
-### Student 3
-### Student 4
+### Daan
+### Lucas
+De lampstack als monitoring client opzetten en verschillende services toevoegen.
+### Lara
+De core installatie verder aanmaken.
+### Jordi
+Alles documenteren, testen en testrapport maken.
 
 ## Waar hebben jullie nog problemen mee?
 
@@ -61,7 +69,6 @@
 ## Feedback technisch luik
 
 ### Algemeen
-
 * Goed Kanban-bord: opdeling in duidelijke deeltaken, werkverdeling
 * Weekrapporten?
     * Vervang in sjabloon (en hier) "student x" door jullie namen
@@ -70,10 +77,9 @@
     * Ik mis taken ivm het selecteren van een test-tool en uitwerken scenario's
 
 Verwerk nieuwe issues [#15](https://huboard.com/HoGentTIN/ops3-g01/#/issues/111118691) en die gemarkeerd als geblokkeerd.
-
-### Student 1
-### Student 2
-### Student 3
-### Student 4
+### Daan
+### Lucas
+### Lara
+### Jordi
 
 
