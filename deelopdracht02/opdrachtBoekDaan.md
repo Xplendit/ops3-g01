@@ -77,3 +77,23 @@ Er zijn in Windows PowerShell ook een aantal speciale variabelen. Deze variabele
 ![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/11.PNG)
 
 ###Using the *While* statement###
+
+    $i = 0
+    While ($i -lt 5)
+     {
+     "`$i equals $i. This is less than 5"
+     $i++
+     } #end while $i lt 5
+
+`-lt`  staat voor less then. Dit script loopt alle getallen af kleiner dan 5.
+
+Uitvoer:
+
+    $i equals 0. This is less than 5
+    $i equals 1. This is less than 5
+    $i equals 2. This is less than 5
+    $i equals 3. This is less than 5
+    $i equals 4. This is less than 5
+
+## Using the *Do...While* statement ##
+
