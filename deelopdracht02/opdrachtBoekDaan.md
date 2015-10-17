@@ -95,5 +95,198 @@ Uitvoer:
     $i equals 3. This is less than 5
     $i equals 4. This is less than 5
 
-## Using the *Do...While* statement ##
+### Using the *Do...While* statement ###
 
+De Do...while...loop statement wordt soms gebruikt als je werkt met VBScript.
+
+####Using the *range* operator####
+Wanneer je een array wil aanmaken met meer van duizenden nummers dan is het handig dat je dit op een korte manier kan doen. Om bijvoorbeeld een array te maken van 1 tot en met 1000 kan je dit simpel doen door:
+
+    $Array = 1..1000
+
+Als we dit in een PowerShell script steken die werkt met een do while ziet dit er als volgt uit.
+
+    $i = 0
+    $ary = 1..5
+    do
+    {
+     $ary[$i]
+     $i++
+    } while ($i -lt 5)
+
+uitvoer: Merk op dat je hier wel de uitkomst 5 ziet staan. Dit komt omdat het om de index gaat van de array en niet om de waarden die in de array staan.
+
+    1
+    2
+    3
+    4
+    5
+
+###Using the *for* statement###
+De structuur van de For loop in PowerShell is de zelfde als die men gebruikt in Java. Eerst geef je een waarde aan je variabele, daarna geef je een voorwaarde mee en tot slot bepaal je hoe je teller moet tellen.
+
+    For($i = 0; $i -le 5; $i++)
+    {
+     ‘$i equals ‘ + $i
+    }
+
+Uitvoer:
+ 
+    $i equals 0
+    $i equals 1
+    $i equals 2
+    $i equals 3
+    $i equals 4
+    $i equals 5
+
+###Using the *ForEach* statement
+De foreach statement wordt gebruikt om waarden uit bijvoorbeeld een array weer te geven, zonder dat het de bedoeling is dat men de inhoud van de array veranderd.
+    
+    $array = 1..5
+    foreach($i in $array)
+    {
+     $i
+    }
+
+uitvoer:
+
+    1
+    2
+    3
+    4
+    5
+
+####Using the *Break* statement####
+In Windows PowerShell gebruik je het break statement om vroegtijdig een lus te verlaten. In onderstaand voorbeeld gebruiken we een if statement om vroegtijdig de lus te verlaten, als de waarde gelijk is aan drie dan voeren we het break statement uit en verlaten we de lus.
+
+    $ary = 1..5
+    ForEach($i in $ary)
+    {
+     if($i -eq 3) { break }
+     $i
+    }
+    "Statement following foreach loop"
+
+De uitvoer van dit script is 1 , 2 , Statement following foreach loop. Merk op dat de waarde 3 niet afgedrukt wordt.
+
+    1
+    2
+    Statement following foreach loop
+    
+####Using the *Exit* statement####
+Als je niet wilt dat de code achter de loop statement nog uitgevoerd wordt dan gebruik je het exit statement in plaats van het break statement. Hou er wel rekening mee als je het exit statement gebruikt dat je PowerShell console afgesloten wordt.
+
+	$ary = 1..5
+    ForEach($i in $ary)
+    {
+     if($i -eq 3) { exit }
+     $i
+    }
+    "Statement following foreach loop"
+
+De uitvoer van dit script is enkel de waarde 1 en 2 die afgedrukt wordt. Dit komt omdat je het exit statement gebruikt en Statement following foreach loop wordt niet meer uitgevoerd en dus ook nie weergeven.
+
+    1
+    2
+
+###Using the *if* statement###
+    $a = 5
+    If($a -eq 5)
+     {
+     ‘$a equals 5’
+     }
+
+uitvoer: wanneer de bewering true is dan wordt het resultaat afgedrukt.
+
+	$a equals 5
+
+In onderstaande afbeelding zie je welke vergelijkingsoperatoren er allemaal bestaan.
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/12.PNG)
+
+Om meerdere vergelijkings condities te maken gebruik je een ElseIf statement.
+
+    $a = 4
+    If ($a -eq 5)
+    {
+     ‘$a equals 5’
+    }
+    ElseIf ($a -eq 3)
+    {
+     ‘$a is equal to 3’
+    }
+    Else
+    {
+     ‘$a does not equal 3 or 5’
+    }
+
+uitvoer:
+
+	$a does not equal 3 or 5
+
+###Using the *Switch* statement###
+In Windows PowerShell is er geen *select case* statement. De *Switch* statement is het meest krachtige statement in de Windows PowerShell taal. De *Switch* statement begint met het *Switch* woord, en de condities worden mooi opgesomd tussen haakjes.
+
+	Switch ($a)
+	{
+	1 { ‘$a = 1’ }
+	2 { ‘$a = 2’ }
+	3 { ‘$a = 3’ }
+	}
+
+####De *Default* conditie####
+Als er geen enkele match wordt gevonden, en er staat een default statement in de switch dan wordt het default statement afgedrukt.
+
+    $a = 2
+    Switch ($a)
+    {
+     1 { ‘$a = 1’ }
+     2 { ‘$a = 2’ }
+     3 { ‘$a = 3’ }
+     Default { ‘unable to determine value of $a’ }
+    }
+    "Statement after switch"
+    
+
+####Matching in switch statement####
+Een voorbeeld van matching in een switch statement zie je in onderstaand voorbeeld.
+
+	$a = 2
+	Switch ($a)
+	{
+	 1 { ‘$a = 1’ }
+	 2 { ‘$a = 2’ }
+	 2 { ‘Second match of the $a variable’ }
+	 3 { ‘$a = 3’ }
+	 Default { ‘unable to determine value of $a’ }
+	}
+	"Statement after switch"
+
+De uitvoer van dit script is:
+
+	$a = 2
+	Second match of the $a variable
+	Statement after switch
+
+####Evaluating an array in een switch statement####
+
+Als je variabele nu een array is, PowerShell kan ook dit uitvoeren.
+
+    $a = 2,3,5,1,77
+    Switch ($a)
+    {
+     1 { ‘$a = 1’ }
+     2 { ‘$a = 2’ }
+     3 { ‘$a = 3’ }
+     Default { ‘unable to determine value of $a’ }
+    }
+    "Statement after switch"
+
+De uitvoer van dit script is de volgende: Iedere waarde uit de array wordt door de Switch uitgevoerd en de uitvoer wordt onder elkaar weergeven.
+
+	$a = 2
+	$a = 3
+	unable to determine value of $a
+	$a = 1
+	unable to determine value of $a
+	Statement after switch
