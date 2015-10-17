@@ -62,3 +62,18 @@ Het leuke aan PowerShell ISE is dat je gestructureerd een script kan schrijven e
 
 ## Chapter 11 Using Windows PowerShell scripts ##
 
+Om een PowerShell script uit te voeren kan je niet zomaar dubbel klikken op het script. Je kan ook nie enkel de naam van het script invullen bij de Run dialog box. Je kan enkel PowerShell scripts runnen als je de execution policy hebt enabled, maar je moet wel het hele pad intypen van je script om het te kunnen runnen ook het .ps1 gedeelte moet erbij.
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/9.PNG)
+
+
+####Using variables####
+Bij default werken met PowerShell hoef je geen variabelen te declareren. Maar wanneer je een variabele gebruikt om data bij te houden dan moet je wel een variabele declareren. Alle variabelen starten met een $-teken, in het volgende voorbeeld maken we een process variabele aan die het Get-Process gaat bijhouden.
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/10.PNG)
+
+Er zijn in Windows PowerShell ook een aantal speciale variabelen. Deze variabelen worden automatisch gecreëerd en hebben een speciale mening. Als je zelf variabelen aanmaakt, zorg er dan voor dat je eigen variabelen andere namen hebben dan deze speciale variabelen. Want anders kan het zijn dat je uitkomst niet klopt. En dit is moeilijk om te fout te vinden.
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/11.PNG)
+
+###Using the *While* statement###
