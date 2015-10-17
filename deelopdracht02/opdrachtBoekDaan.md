@@ -26,27 +26,27 @@ De *-Property* komt overeen op welke kolom je wilt sorteren.
 
 Je kan ook op meerdere kolommen sorteren met het commando: `Get-Service | sort status, displayname -Descending`.
 
-![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/1.png?raw=true)
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/1.PNG)
 
 ###Grouping output after sorting###
 
 Achter dat je gesorteerd hebt, kan je de uitkomst ook nog eens sorteren. Om het het aantal running of stopped services te groeperen gebruik je het *Get-Service* commando voor het ontvangen van de service objects. Pipeline het resultaat van de service objects met het *Sort-Object status* commando en sorteer op status. Tot slot gebruik je het *Group-Object -Property status* commando als je wilt groeperen op status.
 
-![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/2.png?raw=true)
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/2.PNG)
 
 ###Filtering output from one cmdlet###
 
 Het filteren van output gebeurd met het *Where-Object*. Dit laat toe als je bijvoorbeeld enkel wil filteren op specifieke kolom.
 
-![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/3.png?raw=true)
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/3.PNG)
 
 ###Filtering output from one cmdlet before sorting###
 
 Eerst gaan we met het Get commando zaken ophalen. Omdat we niet alle kolommen nodig hebben gebruiken we het select commando om te selecteren welke kolommen voor ons belangrijk zijn. Daarna gaan we filteren op één kolom en zoeken waar het woord Microsoft in voorkomt. En tot slot gaan we alles sorteren op de kolom Name.
 
-Voor:![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/4.png?raw=true)
+Voor:![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/4.PNG)
 
-Na:![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/5.png?raw=true)
+Na:![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/5.PNG)
 
 ##Chapter 10 Using the Windows PowerShell ISE ##
 
@@ -54,11 +54,11 @@ De ISE in Windows PowerShell staat voor Integrated Scripting Environment. Dit wi
 
 Om PowerShell ISE te starten klik je met de rechtermuisknop op het logo van PowerShell en kies je dan voor PowerShell ISE.
 
-![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/6.png?raw=true)
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/6.PNG)
 
 Het leuke aan PowerShell ISE is dat je gestructureerd een script kan schrijven en je kan selecteren welke code je precies wilt uitvoeren. Je bent nooit verplicht om je hele script uit te voeren. Als je niet precies weet welke parameters er precies in het commando aanwezig zijn, dan kan je dankzij de ingebouwde syntax kijken welke parameters je kan meegeven aan het commando.
 
-![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/8.png?raw=true)
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/8.PNG)
 
 ## Chapter 11 Using Windows PowerShell scripts ##
 
