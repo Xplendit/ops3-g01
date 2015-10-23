@@ -30,6 +30,7 @@
 ### Daan
 
 * Deze week heb ik mijn boek grotendeels samengevat.
+* Script aangevuld zodanig dat users via een .csv bestand geimporteerd kunnen worden (nog niet volledig af)
 
 ![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week5_Daan_toggle.PNG)
 
