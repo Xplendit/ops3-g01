@@ -5,7 +5,7 @@
 
 | Student  | Aanw. | Opmerking |
 | :---     | :---  | :---      |
-| student1 |       |           |
+| student1 |Lara   |           |
 | student2 |       |           |
 | student3 |       |           |
 | student4 |       |           |
@@ -35,10 +35,10 @@
 ![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week5_Daan_toggle.PNG)
 
 ### Lara
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/lara5.png?raw=true)
+* Deze week heb ik mijn boek verder aangevuld
+* En ben ik begonnen met testplan voor LOIC
 
-* ...
-
-[Afbeelding individueel rapport tijdregistratie]
 
 ### Lucas
 
@@ -53,6 +53,7 @@
 ### Daan
 Het boek volledig samengevat hebben + assigment op Microsoft virtual academy voltooien.
 ### Lara
+LOIC testplan volledig op punt zetten en boek verder lezen.
 ### Lucas
 
 ## Waar hebben jullie nog problemen mee?
