@@ -1,7 +1,7 @@
-# Voortgangsrapport week nn
+# Voortgangsrapport week 05
 
-* Groep:
-* Datum:
+* Groep:01
+* Datum:23/10/2015
 
 | Student  | Aanw. | Opmerking |
 | :---     | :---  | :---      |
@@ -21,25 +21,25 @@
 
 [Afbeelding teamoverzicht tijdregistratie onderverdeeld per deelopdracht]
 
-### Student 1
+### Jordi
 
 * ...
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 2
+### Daan
+
+* Deze week heb ik mijn boek grotendeels samengevat.
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week5_Daan_toggle.PNG)
+
+### Lara
 
 * ...
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 3
-
-* ...
-
-[Afbeelding individueel rapport tijdregistratie]
-
-### Student 4
+### Lucas
 
 * ...
 
@@ -48,10 +48,11 @@
 ## Wat plan je volgende week te doen?
 
 ### Algemeen
-### Student 1
-### Student 2
-### Student 3
-### Student 4
+### Jordi
+### Daan
+Het boek volledig samengevat hebben + assigment op Microsoft virtual academy voltooien.
+### Lara
+### Lucas
 
 ## Waar hebben jullie nog problemen mee?
 
@@ -62,9 +63,9 @@
 
 ### Algemeen
 
-### Student 1
-### Student 2
-### Student 3
-### Student 4
+### Jordi
+### Daan
+### Lara
+### Lucas
 
 
