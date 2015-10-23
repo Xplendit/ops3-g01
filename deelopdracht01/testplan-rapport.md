@@ -43,6 +43,11 @@ Doelstelling:
 
 Low Orbit Ion Canon is een programma dat de gebruiker DDOS-attacks doet uitvoeren. Je kan er twee soorten aanvallen mee doen: TCP en UDP. Simpelweg voert LOIC massaal PINGs uit op de webpagina waardoor ze de website proberen te overladen. De bedoeling van deze test is dus om te kijken hoeveel bezoekers de LAMP stack aankan en of dit volstaat voor het voorziene gebruik.
 
+[
+**Apache JMeter**](https://www.digitalocean.com/community/tutorials/how-to-use-apache-jmeter-to-perform-load-testing-on-a-web-server "Apache JMeter")
+
+Apache JMeter is een programma waarmee je de performance van je webservers kan testen. Met JMeter kan je verschillende zaken testen, zoals database connections, FTP, HTTP,...
+Het leuke aan JMeter is dat je een volledig testplan kan maken en handmatig de instellingen aanpassen. Dankzij deze tool kan je zien waar er nog bottlenecks aanwezig zijn op je webserver en wat de maximale capaciteit is ervan.
 
 
 
