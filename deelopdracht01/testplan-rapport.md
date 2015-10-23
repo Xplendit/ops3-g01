@@ -15,7 +15,7 @@ Doelstelling:
 
 
 ###Opstelling 1: Eenvoudige LAMP stack
-
+#### Testen van de opzetting ####
 1. Opzetten LAMP stack
 	- [ ] Packages installeren (httpd, php, 'databank')
 	- [ ] Services starten
@@ -37,6 +37,14 @@ Doelstelling:
 4. Visualiseer het gedrag van de server
 5. Bestudeer de metrieken
 6. Zorg ervoor dat de opstelling reproduceerbaar is
+
+#### Testen van de werking ####
+**LOIC**
+
+Low Orbit Ion Canon is een programma dat de gebruiker DDOS-attacks doet uitvoeren. Je kan er twee soorten aanvallen mee doen: TCP en UDP. Simpelweg voert LOIC massaal PINGs uit op de webpagina waardoor ze de website proberen te overladen. De bedoeling van deze test is dus om te kijken hoeveel bezoekers de LAMP stack aankan en of dit volstaat voor het voorziene gebruik.
+
+
+
 
 ###Opstelling 2: Multi-tier webserver
 
