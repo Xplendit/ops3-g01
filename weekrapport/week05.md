@@ -5,10 +5,10 @@
 
 | Student  | Aanw. | Opmerking |
 | :---     | :---  | :---      |
-| student1 |Lara   |           |
-| student2 |       |           |
-| student3 |       |           |
-| student4 |       |           |
+| Lara |   |           |
+| Daan |       |           |
+| Jordi |       |           |
+| Lucas |       |           |
 
 ## Wat heb je deze week gerealiseerd?
 
