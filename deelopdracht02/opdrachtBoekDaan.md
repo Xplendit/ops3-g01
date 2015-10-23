@@ -290,3 +290,29 @@ De uitvoer van dit script is de volgende: Iedere waarde uit de array wordt door 
 	$a = 1
 	unable to determine value of $a
 	Statement after switch
+
+
+## Chapter 12 Working with functions ##
+
+###Understanding functions###
+In Windows PowerShell, functies worden in Windows PowerShell gebruikt als primary programmering element in scripts. Om een functie aan te maken begin je eerst met *Function* gevolgd door een naam die je aan de functie toewijst. Zorg ervoor dat je je functie een duidelijke naam geeft, zodanig dat je weet wat deze functie juist doet.  
+
+	Function Function-Name
+	{
+	 insert your code here
+	} 
+
+###Using multiple input parameters###
+
+Wanneer je meerdere input parameters wilt gebruiken is het belangrijk dat je u functie goed structureert. Dit zorgt ervoor dat je functie makkelijker te lezen is. Als je met meerdere parameters werkt, dan moet je iedere parameter scheiden met een komma.
+
+	Function Function-Name
+	{
+	 Param(
+	 [int]$Parameter1,
+	 [String]$Parameter2 = "DefaultValue",
+	 $Parameter3
+	 )
+	Function code goes here
+	} #end Function-Name 
+
