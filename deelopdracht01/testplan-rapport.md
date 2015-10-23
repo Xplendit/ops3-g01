@@ -42,14 +42,9 @@ Doelstelling:
 **LOIC**
 
 Low Orbit Ion Canon is een programma dat de gebruiker DDOS-attacks doet uitvoeren. Je kan er twee soorten aanvallen mee doen: TCP en UDP. Simpelweg voert LOIC massaal PINGs uit op de webpagina waardoor ze de website proberen te overladen. De bedoeling van deze test is dus om te kijken hoeveel bezoekers de LAMP stack aankan en of dit volstaat voor het voorziene gebruik.
-> A typical DoS attack goes like this:
 
-The attacker identifies one or more computers on the Internet as targets
-The attacker determines what ports the targets service for legitimate services e.g. port 80 for web servers, port 25 for SMTP
-The attacker sends a flood of network traffic to the target server and port
-The target must process all of the traffic to service the real requests
-The target cannot maintain desired performance levels while continuing to process the massively increased traffic
-The target either shuts down entirely or begins to service less than 100% of the requests
+
+
 
 ###Opstelling 2: Multi-tier webserver
 
