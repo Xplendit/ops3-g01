@@ -41,3 +41,9 @@ Vervolgens hebben we de playbook opgesteld zoals u hieronder kunt zien.
 Hier zorgen we ervoor dat er een database wordt aangemaakt met de naam *wordpress*. Daarna maken we een user aan voor de database.
 
 Dan moet je ervoor zorgen dat WordPress de juiste database gebruikt. Eerst installeren we een plugin om de wordpress pagina makkelijk te kunnen vullen met lorem ipsum.
+
+Ga naar volgende site [http://192.168.56.77/wordpress/wp-admin/install.php](http://192.168.56.77/wordpress/wp-admin/install.php) maak hier een admin account aan voor je WordPress.
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht01/img/wordpress.PNG)
+
+
