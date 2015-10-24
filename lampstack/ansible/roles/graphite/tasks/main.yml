@@ -14,7 +14,7 @@
   copy: src={{ ansible_os_family}}/graphite-dump.json dest={{ graphite_python }}/initial_data.json
 
 - name: start mysqld
-  service: name={{ mysql_service }} state=started enabled=true
+  service: name="mysqld" state=started enabled=true
 
 - name: create graphite db
   mysql_db: name=graphite state=present

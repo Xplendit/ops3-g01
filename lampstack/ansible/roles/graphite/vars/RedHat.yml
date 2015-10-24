@@ -3,6 +3,7 @@ packages:
   - httpd
   - python-carbon
   - MySQL-python
+  - mysql
   - python-yaml
   - libselinux-python
 

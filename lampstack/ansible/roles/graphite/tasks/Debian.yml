@@ -1,6 +1,6 @@
 - name: setup custom repo
   apt: pkg=python-pycurl state=present
-#- apt_repository: repo='ppa:jmartin-1/tools'
+- apt_repository: repo='ppa:jmartin-1/tools'
 
 - name: enable carbon
   copy: dest=/etc/default/graphite-carbon content='CARBON_CACHE_ENABLED=true'

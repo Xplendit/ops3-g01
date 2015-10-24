@@ -5,6 +5,8 @@ packages:
   - libapache2-mod-wsgi
   - python-mysqldb
   - python-yaml
+  - mysql
+  - MySQL-python
 
 
 apache_service: apache2

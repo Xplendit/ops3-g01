@@ -1,6 +1,0 @@
-# site.yml
----
-- hosts: collectdsrv
-  sudo: true
-  roles: 
-    - bertvv.collectd
