@@ -65,8 +65,8 @@ LOIC testplan volledig op punt zetten en boek verder lezen.
 * Windows:
     * De opdrachten worden uitgevoerd maar de documentatie kan beter.  
     * Werk samen in één document voor de samenvatting. Uiteindelijk zal dit tijdswinst opleveren. Maak hiervoor duideljke afspraken tijdens de sprint meetings. Hoe wordt de kwaliteit van het document gewaarborgd? Schrijf een duidelijk testplan en maak hiervoor tickets aan.
-    * Document cheatsheat is zo goed als leeg. Elk teamlid vult tijdens het doornemen van de leerstof (boek/virtual academy) het document aan met de geleerde commando's. Maak hiervoor duidelijk afspraken rond de onderverdeling van het document in hoofdstukken (bvb verschillend document per hoofdstuk), de onderlingen samenwerking en de kwaliteitsgarantie.
-    * Na 5 weken slechts 1 script aanwezig in de scripts folder. Van een team bestaande uit 4 leden verwacht ik meer na 5 weken. Alle scripts die je gebruikt of leert uit het boek of de online oploeding hou je bij. Zorg voor een duidelijke structuur.
+    * Document cheatsheet is zo goed als leeg. Elk teamlid vult tijdens het doornemen van de leerstof (boek/virtual academy) het document aan met de geleerde commando's. Maak hiervoor duidelijk afspraken rond de onderverdeling van het document in hoofdstukken (bvb verschillend document per hoofdstuk), de onderlingen samenwerking en de kwaliteitsgarantie.
+    * Na 5 weken slechts 1 script aanwezig in de scripts folder. Van een team bestaande uit 4 leden verwacht ik meer na 5 weken. Alle scripts die je gebruikt of leert uit het boek of de online opleiding hou je bij. Zorg voor een duidelijke structuur.
 
 ### Jordi
 ### Daan
