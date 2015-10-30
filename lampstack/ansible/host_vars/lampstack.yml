@@ -34,9 +34,9 @@ wordpress_user: user
 wordpress_password: WopWop
 wordpress_plugins: 
   - name: demo-data-creator
-# mariadb_init_scripts:
-  # - database: wordpress
-    # script: init.sql
+mariadb_init_scripts:
+  - database: wordpress
+    script: init.sql
 
 collectd_server: 192.168.56.11
   

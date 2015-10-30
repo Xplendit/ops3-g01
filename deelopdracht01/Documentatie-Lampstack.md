@@ -46,4 +46,6 @@ Ga naar volgende site [http://192.168.56.77/wordpress/wp-admin/install.php](http
 
 ![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht01/img/wordpress.PNG)
 
+Log hierna 
+
 
