@@ -19,5 +19,6 @@ Auteur(s) testplan: Jordi
 - [ ] Hoofdstuk 8 gelezen en gedocumenteerd
 - [ ] Hoofdstuk 9 gelezen en gedocumenteerd
 - [ ] Hoofdstuk 10 gelezen en gedocumenteerd
+- [ ] Spellingscontrole
 
 #### Testen rapport ####
