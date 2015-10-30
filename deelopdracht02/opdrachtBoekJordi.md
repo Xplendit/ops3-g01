@@ -57,5 +57,39 @@ Om de services van je storage account te kunnen beheren heb je 2 gegevens nodig.
 
 	$accountKey = Get-AzureStorageKey -StorageAccountName naam
 
-Hier 
+Hier steek je je storagekey in een variabele genaamd accountkey. Vervolgens gaan we volgend commando gebruiken om de Primary en Secondary properties van de key te bekijken.
 
+	$accountKey | Format-List –Property Primary,Secondary
+
+
+Nu gaan we 1 van de keys toewijzen aan een variabele.
+
+	PS C:\> $key = $accountKey.Primary
+
+#### Using Azure File storage ####
+
+We gaan nu connecteren met het Azure Storage Account en dit in een variabele steken.
+Gebruik nu volgende cmdlet. Het commando gebruikt 2 parameters. De eerste parameter is de naam van je storageaccount en de tweede is de key die je hiervoor in een variabele hebt gestoken.
+	
+	$context = New-AzureStorageContext naam $key
+
+Nu gaan we een nieuwe file share creëren. DIt is ook zeer simpel te doen met volgende cmdlet:
+
+	$share = New-AzureStorageShare psautomationshare –Context $context
+
+Om een nieuwe map aan te maken gebruik he volgende cmdlet:
+	
+	New-AzureStorageDirectory –Share $share –Path mapnaam
+
+Nu gaan we een file uploaden. Maar eerst gaan we een sample file aanmaken. Dit kan je wederom met een commando:
+	
+	Set-Content C:\Files\MyFile.txt –Value "Hello"
+
+Natuurlijk kies je zelf de locatie van je file.
+Upload nu je file met volgende commando:
+
+	Set-AzureStorageFileContent –Share $share –Source C:\Files\MyFile.txt –Path mapnaam
+
+Controleer nu of je file op je storage account staat. Dit kan je simpel doen met volgende commando:
+
+	Get-AzureStorageFile –Share $share –Path mapnaam
