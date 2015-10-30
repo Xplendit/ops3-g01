@@ -25,9 +25,13 @@
 
 * Proberen oplossen van het lampstack inlogprobleem.
 
-### Student 2
+### Lucas
 
-* ...
+* Monitoring server opgezet (collectd)
+* Collectd-web opgezet
+* Documentatie monitoring
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week5_Lucas_toggl.PNG)
 
 [Afbeelding individueel rapport tijdregistratie]
 
@@ -48,7 +52,9 @@
 ### Algemeen
 ### Jordi
 Tot en met hoofdstuk 6 lezen van Powershell boek
-### Student 2
+### Lucas
+* Powershell boek verder lezen en documenteren
+* Monitoring verder uitbreiden en firewall
 ### Student 3
 ### Student 4
 
