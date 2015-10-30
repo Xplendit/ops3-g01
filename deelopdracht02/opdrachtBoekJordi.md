@@ -75,7 +75,7 @@ Gebruik nu volgende cmdlet. Het commando gebruikt 2 parameters. De eerste parame
 
 Nu gaan we een nieuwe file share creëren. DIt is ook zeer simpel te doen met volgende cmdlet:
 
-	$share = New-AzureStorageShare psautomationshare –Context $context
+	$share = New-AzureStorageShare naam –Context $context
 
 Om een nieuwe map aan te maken gebruik he volgende cmdlet:
 	
@@ -93,3 +93,17 @@ Upload nu je file met volgende commando:
 Controleer nu of je file op je storage account staat. Dit kan je simpel doen met volgende commando:
 
 	Get-AzureStorageFile –Share $share –Path mapnaam
+
+#### Using Azure Blob storage
+
+We gaan het principe van de Azure Blob storage eens tonen aan de hand van een file in een container up te loaden om deze daarna te bekijken via de webbrowser. Ik ga ervan uit dat u nog steeds in dezelfde sessie aan het werken bent en dat vorige gebruikte variablen nog steeds dezelfde waarden hebben.
+
+We gaan eerst een public container aanmaken waar we de file in gaan steken. Gebruik volgende command:
+
+	New-AzureStorageContainer –Name containernaam –Context $context –Permission Container
+
+We gebruiken dezelfde file die we hiervoor hebben aangemaakt. Upload deze op volgende manier: 
+
+	Set-AzureStorageBlobContent –File C:\Files\MyFile.txt –Blob "MyFile.txt" –Container containernaam –Context $context
+
+Nu kan je gaan surfen naar je file/container om na te kijken of het gelukt is. De url is als volgt https://<StorageAccountName>.blob.core.windows.net/<ContainerName>/<BlobName>.

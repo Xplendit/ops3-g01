@@ -7,6 +7,6 @@ el7_firewall_allow_services:
   - https
 
 el7_firewall_allow_ports:
-  - 25827/udp
+  - 25826/udp
 
 collectd_server: 192.168.56.11
