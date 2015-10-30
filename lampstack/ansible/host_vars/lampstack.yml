@@ -1,6 +1,5 @@
 # host_vars/lampstack.yml
 ---
-
 el7_repositories:
   - epel-release
 
@@ -14,6 +13,9 @@ el7_install_packages:
 el7_firewall_allow_services:
   - http
   - https
+
+el7_firewall_allow_ports:
+  - 25827/udp
 
 httpd_scripting: 'php'
 
@@ -36,12 +38,5 @@ wordpress_plugins:
   # - database: wordpress
     # script: init.sql
 
-collectd_plugins:
-  plugin: "load"
-  plugin: "memory"
-  
-collectd_plugins_multi:
-  interface: {Interface: "eth0"}
-  disk: {Disk: "sda"}
-  network: {Server: "192.168.56.10"}
+collectd_server: 192.168.56.11
   

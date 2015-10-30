@@ -9,11 +9,10 @@
     - bertvv.mariadb
     - bertvv.wordpress
     - phpmyadmin
-    - collectd
+    - bertvv.collectd
 
-- hosts: collectdsrv
+- hosts: monisrv
   sudo: true
   roles:
     - bertvv.el7
-    - collectd
-    - graphite
+    - bertvv.collectd

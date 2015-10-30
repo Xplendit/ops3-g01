@@ -1,0 +1,12 @@
+# host_vars/monisrv.yml
+# Variables visible to monisrv.yml
+---
+
+el7_firewall_allow_services:
+  - http
+  - https
+
+el7_firewall_allow_ports:
+  - 25827/udp
+
+collectd_server: 192.168.56.11
