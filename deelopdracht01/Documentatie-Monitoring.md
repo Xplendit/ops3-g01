@@ -15,5 +15,8 @@
 - <https://github.com/jsmartin/ansible-graphite>
 - <https://github.com/dmichel1/ansible-graphite>
 
+- <http://dandydev.net/blog/statserver-setting-up-monitoring-and-statistics-with-ansible#.VjJvjPkvf4Z>
+
+- <https://github.com/httpdss/collectd-web>
  
 - Yum: <http://www.fedoraforum.org/forum/showthread.php?t=25880>

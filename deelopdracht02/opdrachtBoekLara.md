@@ -124,5 +124,4 @@ De eerste stappen zijn conform aan de vorige punten. Eerst zoeken we terug de ju
 
 ![iisinstall](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/iisinstall.png?raw=true)
 
-#### 3.1 Configuring IIS for SSL ####
 

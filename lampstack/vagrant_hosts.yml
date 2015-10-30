@@ -36,5 +36,9 @@
         :mount_options: ['dmode=0755', 'fmode=0644']
 - name: collectdsrv
   ip: 192.168.56.10
+  
+- name: monisrv
+  ip: 192.168.56.11
+
 
 

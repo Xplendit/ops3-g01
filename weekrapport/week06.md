@@ -1,35 +1,37 @@
-# Voortgangsrapport week nn
+# Voortgangsrapport week 06
 
-* Groep:
-* Datum:
+* Groep:01
+* Datum:30/10/2015
 
 | Student  | Aanw. | Opmerking |
 | :---     | :---  | :---      |
-| student1 |       |           |
-| student2 |       |           |
-| student3 |       |           |
-| student4 |       |           |
+| Jordi |       |           |
+| Daan |       |           |
+| Lucas |       |           |
+| Lara |       |           |
 
 ## Wat heb je deze week gerealiseerd?
 
 ### Algemeen
 
-[Afbeelding huidige toestand Kanban-bord(en) invoegen]
 
-* ...
-* ...
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/huboardweek6.PNG)
 
 [Afbeelding teamoverzicht tijdregistratie onderverdeeld per deelopdracht]
 
-### Student 1
+### Jordi
 
-* ...
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week5_Jordi_toggle.PNG)
 
-[Afbeelding individueel rapport tijdregistratie]
+* Proberen oplossen van het lampstack inlogprobleem.
 
-### Student 2
+### Lucas
 
-* ...
+* Monitoring server opgezet (collectd)
+* Collectd-web opgezet
+* Documentatie monitoring
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week5_Lucas_toggl.PNG)
 
 [Afbeelding individueel rapport tijdregistratie]
 
@@ -48,8 +50,11 @@
 ## Wat plan je volgende week te doen?
 
 ### Algemeen
-### Student 1
-### Student 2
+### Jordi
+Tot en met hoofdstuk 6 lezen van Powershell boek
+### Lucas
+* Powershell boek verder lezen en documenteren
+* Monitoring verder uitbreiden en firewall
 ### Student 3
 ### Student 4
 
