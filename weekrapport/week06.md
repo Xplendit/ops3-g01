@@ -35,9 +35,12 @@
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 3
+### Lara
 
-* ...
+* Windows server boek verder gelezen
+* jMeter en LOIC opzetten
+* 
+![](https://i.gyazo.com/f33be908baeec5b176ac7b168e62d99c.png)
 
 [Afbeelding individueel rapport tijdregistratie]
 
@@ -55,7 +58,9 @@ Tot en met hoofdstuk 6 lezen van Powershell boek
 ### Lucas
 * Powershell boek verder lezen en documenteren
 * Monitoring verder uitbreiden en firewall
-### Student 3
+### Lara
+* bekijken welke hoofdstukken ik uit het boek ga doornemen en welke niet
+* jMeter
 ### Student 4
 
 ## Waar hebben jullie nog problemen mee?
