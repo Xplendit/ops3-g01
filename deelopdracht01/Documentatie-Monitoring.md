@@ -1,5 +1,14 @@
 #Documentatie Collectd
 
+##Collectd
+
+###Introductie
+
+Collectd is een daemon die de prestatie statistieken verzamelt en de mogelijheid geeft om deze waarden op te slaan.    
+Het verzamelt statistieken over een systeem waar op het loopt en slaat deze op. Deze statistieken kunnen dan gebruikt worden voor de prestatie te meten en systeem capaciteit te plannen.      
+
+
+
 ##Links
 
 ###Collectd
