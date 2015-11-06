@@ -59,13 +59,16 @@
 ### Student 1
 ### Daan
 - Jmeter testplan opmaken
-- Powershell script verder uitwerken
+- Powershell script verder uitwerken   
+
 ### Lucas
 - Monitoring uitbreiden
-- Powershell boek verder lezen en samenvatten
+- Powershell boek verder lezen en samenvatten    
+
 ### Lara
 - JMeter
-- Powershell video lessen
+- Powershell video lessen    
+
 ### Student 4
 
 ## Waar hebben jullie nog problemen mee?
