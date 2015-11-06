@@ -75,5 +75,32 @@ function Add-Users {
         -AccountPassword $Password -ChangePasswordAtLogon $true -enable $true
     }
 }
+#Userfolders aanmaken in E drive
+function Add-UserFolders {
+    [CmdletBinding()]
+    Param(
+        [string]$DriveLetter = "E:",
+        [string]$ProfilesFolder = "$DriveLetter/UserProfiles",
+        [string]$UsersFolder = "$DriveLetter/UserFolders"
+    )
+
+    New-Item -ItemType directory -path "$profilesFolder"
+    New-Item -ItemType directory -path "$usersFolder"
+}
+#Beveiliging 
+#Na 3 mislukt pogingen 1uur lockout, Identity word gevraagd en bij ons is dit Assengraaf.nl
+function Set-LockoutPolicy {
+	[cmdletbinding()]
+	Param(
+		[Timespan]$LockoutDuration = "1:00:00",
+		[int]$LockoutThreshold = 3
+	)
+    Set-ADDefaultDomainPasswordPolicy -LockoutThreshold $LockoutThreshold -LockoutDuration $LockoutDuration
+}
+
+Get-LockoutPolicy
+function get-LockoutPolicy {
+Get-ADDefaultDomainPasswordPolicy
+}
 
  
