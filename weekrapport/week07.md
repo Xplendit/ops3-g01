@@ -1,14 +1,14 @@
-# Voortgangsrapport week nn
+# Voortgangsrapport week 07
 
-* Groep:
-* Datum:
+* Groep: 03
+* Datum: 06/11/2015
 
 | Student  | Aanw. | Opmerking |
 | :---     | :---  | :---      |
-| student1 |       |           |
-| student2 |       |           |
-| student3 |       |           |
-| student4 |       |           |
+| Jordi |       |           |
+| Daan |       |           |
+| Lucas |       |           |
+| Lara |       |           |
 
 ## Wat heb je deze week gerealiseerd?
 
@@ -23,9 +23,10 @@
 
 ### Jordi
 
-* ...
+* ![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week7_Jordi_toggle.PNG)
 
-[Afbeelding individueel rapport tijdregistratie]
+* 3 Hoofdstukken samengevat van Powershell boek.
+* Lampstack documentatie
 
 ### Daan
 
@@ -52,7 +53,9 @@
 ## Wat plan je volgende week te doen?
 
 ### Algemeen
-### Student 1
+### Jordi
+- Lampstack doc afwerken
+- 2 hoofdstukken van powershell afwerken
 ### Daan
 - Jmeter testplan opmaken
 - Powershell script verder uitwerken
