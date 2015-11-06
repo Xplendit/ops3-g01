@@ -14,12 +14,8 @@
 
 ### Algemeen
 
-[Afbeelding huidige toestand Kanban-bord(en) invoegen]
-
-* ...
-* ...
-
-[Afbeelding teamoverzicht tijdregistratie onderverdeeld per deelopdracht]
+* ![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/huboardweek7.PNG)
+* ![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/toggleweek7.PNG)
 
 ### Jordi
 
