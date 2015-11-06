@@ -6,7 +6,7 @@
 
 ###Testplan
 
-Auteur(s) testplan: Jordi
+Auteur(s) testplan: Lara
 
 - [ ] Boek gekozen
 - [ ] Hoofdstuk 1 gelezen en gedocumenteerd
