@@ -40,15 +40,19 @@
 
 ### Lucas
 
-* ...
+* Monitoring documentatie
+* Powershell boek lezen
+* Cheatsheet, testplan en samenvatting boek
 
-[Afbeelding individueel rapport tijdregistratie]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week6_Lucas_toggl.PNG)
 
 ### Lara
 
-* ...
+* Jmeter bestuderen
+* Powershell boek verder gelezen
+* Virtual academy: 2 lessen bekeken
 
-[Afbeelding individueel rapport tijdregistratie]
+![](https://i.gyazo.com/80f05f7e8dbb71e2b942eaa6cf8ffb9a.png)
 
 ## Wat plan je volgende week te doen?
 
@@ -59,7 +63,12 @@
 ### Daan
 - Jmeter testplan opmaken
 - Powershell script verder uitwerken
-### Student 3
+### Lucas
+- Monitoring uitbreiden
+- Powershell boek verder lezen en samenvatten
+### Lara
+- JMeter
+- Powershell video lessen
 ### Student 4
 
 ## Waar hebben jullie nog problemen mee?
