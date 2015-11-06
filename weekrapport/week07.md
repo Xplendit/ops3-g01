@@ -21,25 +21,29 @@
 
 [Afbeelding teamoverzicht tijdregistratie onderverdeeld per deelopdracht]
 
-### Student 1
+### Jordi
 
 * ...
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 2
+### Daan
+
+
+* ![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week7_Daan_toggle.PNG)
+* Jmeter functionaliteiten bekijken
+* PowerShell script in functies gestoken
+* Virtual academy assessments 
+
+[Afbeelding individueel rapport tijdregistratie]
+
+### Lucas
 
 * ...
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 3
-
-* ...
-
-[Afbeelding individueel rapport tijdregistratie]
-
-### Student 4
+### Lara
 
 * ...
 
@@ -49,7 +53,9 @@
 
 ### Algemeen
 ### Student 1
-### Student 2
+### Daan
+- Jmeter testplan opmaken
+- Powershell script verder uitwerken
 ### Student 3
 ### Student 4
 
