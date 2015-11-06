@@ -43,7 +43,7 @@
 * Powershell boek lezen
 * Cheatsheet, testplan en samenvatting boek
 
-![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week6_Lucas_toggl.PNG)
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week6_Lucas_Toggl.PNG)
 
 ### Lara
 
