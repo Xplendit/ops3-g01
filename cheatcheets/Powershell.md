@@ -7,6 +7,10 @@
 
 - **Set-ExecutionPolicy** Je kan powershell scripts uitvoeren en creëren, maar Microsoft heeft scripting uitgeschakeld om tegen te gaan dat slechte code wordt uitgevoerd in een PowerShell omgeving. Je hebt vier security levels die je kan instellen.
 	- **Restricted** is de default execution policy en vergrendeld PowerShell zodat enkel de commando's bekeken kunnen worden bekenen maar niet worden uitgevoerd.
-	- **All Signed** wanneer dit is ingesteld dan heb je de mogelijkheid om je scripts te runnen, maar dit kan enkel door vertrouwde gebruikers uitgevoerd worden.
+	- **All Signed** wanneer dit is ingesteld dan heb je de mogelijkheid om je scripts te runnen, maar dit kan enkel door vertrouwde gebruikers uitgevoerd worden.	
+	- **Remote signed** elk PowerShell script dat je lokaal hebt gecreeërd ga je kunnen runnen. Script dat je remotely hebt gecreeërd ga je kunnen runnen enkel als je een vertrouwde maker bent.
+	- **Unrestricted** zoals de naam al aangeeft, verwijderd het alle beperkingen van de  execution policy.
 - **Get-ExecutionPolicy**
-Wanneer je op een server werkt waarmee je niet vertrouwd bent, dan wil je weten welke execution policy
+Wanneer je op een server werkt waarmee je niet vertrouwd bent, dan wil je weten welke execution policy geactiveerd staat.
+
+- **Get-Service** is een commando die je een lijst teruggeeft met welke services er allemaal runnen op je systeem. Als je maar geïnteresseerd bent in één specifieke service kan je gebruik maken van de -Name dan toont hij enkel de service die jij wenst te zien.
