@@ -28,11 +28,14 @@
 
 ![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week8_Lucas_Toggl.PNG)
 
-### Student 2
+### Daan
 
-* ...
+* Powershell script verder afgewerkt
+* Cheatcheet aangevuld
 
-[Afbeelding individueel rapport tijdregistratie]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week8_Daan_toggle.PNG)
+
+
 
 ### Student 3
 
@@ -51,7 +54,8 @@
 ### Algemeen
 ### Lucas
 Powershell boek en monitoring testen
-### Student 2
+### Daan
+Lampstack testen met JMeter.
 ### Student 3
 ### Student 4
 
