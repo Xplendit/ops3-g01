@@ -370,5 +370,160 @@ Om een verbinding te kunnen maken hebben we een connection string nodig. Dit gaa
 
 Nu gaan we deze string gebruiken om een connecie te maken en om die dan te openen.
 
-	System.Data.SqlClient.SqlConnection -ArgumentList $connectionString
+	$connection = New-Object System.Data.SqlClient.SqlConnection -ArgumentList $connectionString
 	$connection.Open()
+
+Om een nieuwe tabel aan te maken moet je eerst een sql command aanmaken. Doe dit op volgende manier.
+
+	$command = New-Object System.Data.SqlClient.SqlCommand
+	$command.CommandText = "CREATE TABLE [dbo].[MyData] ([RecordID] INT NOT NULL PRIMARY KEY IDENTITY(1,1), [MyValue] NVARCHAR(MAX) NOT NULL)"
+	$command.Connection = $connection
+	$command.ExecuteNonQuery()
+
+Een nieuwe rij toevoegen aan de table:
+
+	$command = New-Object System.Data.SqlClient.SqlCommand
+	$command.CommandText = "INSERT [dbo].[MyData] ([MyValue]) VALUES ('Hello')"
+	$command.Connection = $connection
+	$command.ExecuteNonQuery()
+
+Om een resultaat te kunnen tonen van je tabel moet je Datatable en sqladapter gebruiken:
+
+	$result = New-Object System.Data.DataTable
+	$adapter = New-Object System.Data.SqlClient.SqlDataAdapter -ArgumentList "SELECT * FROM [dbo].[MyData]",$connection
+	$adapter.Fill($result)
+	$result
+
+Vergeet niet de database nadien te sluiten:
+
+	$connection.Close()
+
+#### Exporting and importing a Microsoft Azure SQL Database
+
+We gaan nu terug de key van ons storage account ophalen en toewijzen aan een variabele.
+Als je dit in dezelfde sessie doet als die van hoofdstuk 2, kan je dezelfde variabelen gebruiken die we toen gebruikt hebben. Indien dit niet het geval is doe je het volgende
+	
+	$accountKey = Get-AzureStorageKey –StorageAccountName psautomation
+	$storageContext = New-AzureStorageContext psautomation $accountKey.Primary
+
+Maak een nieuwe Azure Blob aan
+
+	$container = New-AzureStorageContainer –Name sqlexports –Context $storageContext –Permission Off
+
+Exporteer nu de SQL Database:
+
+	$request = Start-AzureSqlDatabaseExport –SqlConnectionContext $context –torageContainer $container –DatabaseName "MyDatabase" –BlobName "MyDatabaseExport_2015_01_20"
+
+Bekijk nu de status van de export, als deze compleet is kan je naar volgende stap gaan.
+
+	Get-AzureSqlDatabaseImportExportStatus –Request $request
+
+Importeer nu de database terug in een nieuwe SQL database
+
+	Start-AzureSqlDatabaseImport –SqlConnectionContext $context –StorageContainer $container –DatabaseName "MyDatabaseImported" –BlobName "MyDatabaseExport_2015_01_20"
+
+#### Removing a Microsoft Azure SQL Database
+
+Om een database te verwijderen gebruik je volgend commando:
+
+	Remove-AzureSqlDatabase –ServerName "jztfvtq0e1" –DatabaseName "MyDatabase"
+
+### 5. Deploying and Managing Azure Websites with PowerShell
+
+#### Creating and configuring a new Microsoft Azure website
+
+Gebruik volgend commando om een nieuwe website te maken.
+
+	New-AzureWebsite –Name psautomation –Location "WestUS"
+
+Om de hostname van je zo juist aangemaakte website te weten, gebruik je volgend cmdlet:
+
+	Get-AzureWebsite –Name psautomation | Select-Object HostNames
+
+Het aanzetten van HTTP en je azure storage account toewijzen.
+	
+	$appSettings = New-Object Hashtable
+	$appSettings["StorageKey"] = "<Storage Account Key>"
+	$appSettings["StorageName"] = "psautomation"
+	Set-AzureWebsite –Name psautomation –HttpLoggingEnabled 1 –AppSettings $appSettings
+
+#### Managing Microsoft Azure websites
+
+Een aantal handig cmdlets:
+
+Om een lijst van alle websites die gekoppeld zijn aan je Azure subscription:
+
+	Get-AzureWebsite
+
+Om een log van de website te krijgen. Deze commando stopt pas als je ctrl+c hebt ingedrukt.
+
+	Get-AzureWebsiteLog –Name psautomation –Path http –Tail
+
+Om de website offline te halen
+
+	Stop-AzureWebsite psautomation
+
+De website terug te starten
+
+	Start-AzureWebsite psautomation
+
+Om de website te verwijderen
+
+	Remove-AzureWebsite psautomation
+
+### 6. Managing Azure Virtual Networks with PowerShell
+
+#### Creating and managing an Azure Virtual Network
+
+Om een virtueel netwerk te maken, moet je eerst een configfile aanmaken, daarna pas kan je het netwerk hiermee aanmaken en dan kunnen we Virtual Machines toevoegen.
+
+##### Creating an Azure Virtual Network configuration file
+
+We gaan in dit voorbeeld volgend xml config file gebruiken:
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<NetworkConfiguration xmlns="http://schemas.microsoft.com/
+	ServiceHosting/2011/07/NetworkConfiguration">
+	<VirtualNetworkConfiguration>
+		<Dns>
+			<DnsServers>
+				<DnsServer name="DNS1" IPAddress="10.10.1.1"/>
+			</DnsServers>
+		</Dns>
+		<VirtualNetworkSites>
+			<VirtualNetworkSite name="PSAutomation"	Location="West US">
+				<DnsServersRef>
+					<DnsServerRef name="DNS1"/>
+					</DnsServersRef>
+					<Subnets>
+						<Subnet name="SubProxyServer">
+							<AddressPrefix>10.10.2.32/27</AddressPrefix>
+						</Subnet>
+					</Subnets>
+					<AddressSpace>
+						<AddressPrefix>10.10.1.0/16</AddressPrefix>
+					</AddressSpace>
+			</VirtualNetworkSite>
+		</VirtualNetworkSites>
+	</VirtualNetworkConfiguration>
+	</NetworkConfiguration>
+
+Hiermee maak je een nieuw virtueel netwerk aan met de naam PSAutomation. Met 10.10.1.1 als de DNS server. Het netwerk is toegankelijk via 10.10.1.0/16. Hier is ook een subnet aangemaakt met 101.10.2.32/27.
+
+##### Creating an Azure Virtual Network
+
+We gaan vorig aangemaakt config file uploaden om het netwerk aan te maken:
+
+	Set-AzureVNetConfig –ConfigurationPath C:\Files\VNetConfig.xml
+
+Kijk of het netwerk wel degelijk is aangemaakt
+
+	Get-AzureVNetSite
+
+##### Creating virtual machines in an Azure Virtual Network
+
+Met volgend commando maak je heel simpel een nieuwe VM aan. Vul natuurlijk de parameters in naar wens.
+
+	New-AzureQuickVM –VNetName PSAutomation –Windows –ServiceName "PSAutomation2012R2VNet" –Name "PSVNet2012R2" –Location "West US" –AdminUsername "PSAutomation" –Password "Pa$$w0rd" –InstanceSize "Small" –ImageName "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201412.01-en.us-127GB.vhd"
+
+##### Backing up an Azure Virtual Network configuration
