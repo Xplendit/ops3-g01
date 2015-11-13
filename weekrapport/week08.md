@@ -37,9 +37,9 @@
 
 
 
-### Student 3
+### Lara
 
-* ...
+![](https://i.gyazo.com/c9d2cbdf9ba253f1017e5c336d6bee4e.png)
 
 [Afbeelding individueel rapport tijdregistratie]
 
