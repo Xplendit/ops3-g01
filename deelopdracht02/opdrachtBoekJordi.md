@@ -527,3 +527,182 @@ Met volgend commando maak je heel simpel een nieuwe VM aan. Vul natuurlijk de pa
 	New-AzureQuickVM –VNetName PSAutomation –Windows –ServiceName "PSAutomation2012R2VNet" –Name "PSVNet2012R2" –Location "West US" –AdminUsername "PSAutomation" –Password "Pa$$w0rd" –InstanceSize "Small" –ImageName "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201412.01-en.us-127GB.vhd"
 
 ##### Backing up an Azure Virtual Network configuration
+
+Gebruik volgend commando om je config file lokaal op te slagen
+
+	Get-AzureVNetConfig –ExportToFile C:\Files\Backup.xml
+
+##### Removing an Azure Virtual Network configuration
+
+Gebruik volgend commando om de config file te verwijderen 
+
+	Remove-AzureVNetConfig
+
+### 8. Managing Azure Cloud Services with PowerShell
+
+#### Connecting to a Microsoft Azure virtual machine with a Microsoft Azure Cloud Service
+
+Om de huidige cloud service te weten die aan je account is gekoppeld, gebruik je volgend commando:
+
+	Get-AzureService
+
+Om meer details te verkrijgen over de Azure cloud service instances gebruik je volgend commando:
+
+	Get-AzureRole –ServiceName PSAutomation2012R2 –InstanceDetails
+
+We gaan nu nakijken welke endpoints er op de VM zijn ingegesteld.
+
+	$role = Get-AzureRole –ServiceName PSAutomation2012R2 –RoleName PSAuto2012R2 –InstanceDetails
+	$role.InstanceEndpoints
+
+Om snel en eenvoudig met je VM te verbinden met Remote Desktop, maak je een RDP connection file
+
+	Get-AzureRemoteDesktopFile –ServiceName PSAutomation2012R2 –Name PSAuto2012R2 –LocalPath C:\RDP\PSAuto2012R2.rdp
+
+### 9. Managing Azure Active Directory with PowerShell
+
+#### Connecting to Azure Active Directory
+
+Om de Windows Azure Active Directory Module voor Powershell toe te voegen aan je huidige sessie gebruik je volgend commando:
+
+	Import-Module MSOnline
+
+Connecteer met je Active Directory
+
+	Connect-MsolService
+
+#### Creating a new Azure Active Directory domain
+
+Maak een nieuw domein aan en wijs deze toe aan een variabele
+
+	$domain = New-MsolDomain –Name PowerShell.local
+
+Om de label te weten die je moet gebruiken om je DNS records up te daten, moet je volgend command gebruiken
+
+	Get-MsolDomainVerificationDns -DomainName PowerShell.local
+
+Wanneer de DNS records zijn geupdated, moet je deze verifiëren
+
+	Confirm-MsolDomain -DomainName PowerShell.local
+
+#### Configuring an Azure Active Directory domain
+
+Bekijk eerst de huidige password policy settings
+
+	Get-MsolPasswordPolicy -DomainName PowerShell.local
+
+Veranderen doe je zo:
+
+	Set-MsolPasswordPolicy -DomainName PowerShell.local -NotificationDays 14 -ValidityPeriod 90
+
+#### Managing Azure Active Directory users and groups
+
+Eerst voeg je nieuwe users toe, deze voeg je toe aan een variabele:
+
+	$jane = New-MsolUser -UserPrincipalName 	"jane@powershell.local" -DisplayName "Jane" -Password "P@assword1234~"
+	$john = New-MsolUser -UserPrincipalName	"john@powershell.local" -DisplayName "John" -Password "P@assword1234~"
+
+Nieuwe groep aanmaken
+
+	$services = New-MsolGroup -DisplayName "Services"
+	$support = New-MsolGroup -DisplayName "Support"
+	$development = New-MsolGroup -DisplayName "Development"
+
+Users aan een groep toevoegen, je kan ook een groep aan een andere groep toevoegen
+
+	Add-MsolGroupMember -GroupObjectId $development.ObjectId -GroupMemberObjectId $jane.ObjectId
+	Add-MsolGroupMember -GroupObjectId $support.ObjectId -GroupMemberObjectId $john.ObjectId
+	Add-MsolGroupMember -GroupObjectId $services.ObjectId -GroupMemberObjectId $support.ObjectId -GroupMemberType Group
+
+Om de membership van een groep te tonen:
+
+	Get-MsolGroupMember -GroupObjectId $services.ObjectId
+#### Using PowerShell to bulk import users and groups into Azure Active Directory
+
+Maak een users.csv aan met alle gebruikers die je wilt toevoegen aan je AD. Bijvoorbeeld
+
+	"Username","Password","DisplayName","City"
+	"rose@powershell.local","P@ssword1234~","Rose","London"
+	"jose@powershell.local","P@ssword1234~","Jose","London"
+	"pierre@powershell.local","P@ssword1234~","Pierre","London"
+	"diego@powershell.local","P@ssword1234~","Diego","London"
+	"sherlock@powershell.local","P@ssword1234~","Sherlock","London"
+
+Wijs deze toe aan een variabele
+
+	$users = Import-Csv C:\Files\Users.csv
+
+Dan voegen we deze toe aan de AD
+
+	$users | ForEach-Object { New-MsolUser -UserPrincipalName $_.Username -Password $_.Password -DisplayName $_.DisplayName -City $_.City }
+
+### 10. Automating Azure with PowerShell
+
+#### Creating and managing runbooks in Microsoft Azure
+
+Je moet eerst een Automation account aanmaken op de website.
+
+Daarna gaan we een runbook maken
+
+	New-AzureAutomationRunbook –Name "PSAutomationStarter" –AutomationAccountName psautomation
+
+We gaan de workflow van de runbook met een scriptje doen:
+
+	workflow PSAutomationStarter
+	{
+	# Retrieve credentials from the Automation account
+	$creds = Get-AutomationPSCredential -Name 'PSAutomation'
+	# Connect to the Azure account
+	Add-AzureAccount -Credential $creds
+	# Select Azure subscription
+	Select-AzureSubscription -SubscriptionName 'Pay-As-You-
+	Go'
+	# Get the Azure virtual machines in the Azure
+	subscription
+	Get-AzureVM
+	}
+Nu gaan we ervoor zorgen dat dit scriptje gebruikt wordt op je automation account
+
+	Set-AzureAutomationRunbookDefinition –Name|"PSAutomationStarter" –Path C:\Files\Azure\PSAutomationStarter.ps1 –AutomationAccountName psautomation -Overwrite
+
+Publish je runbook om deze te kunnen gebruiken
+
+	Publish-AzureAutomationRunbook –Name PSAutomationStarter –AutomationAccountName psautomation
+
+Start deze nu:
+
+	Start-AzureAutomationRunbook –Name PSAutomationStarter –AutomationAccountName psautomation
+
+Status van de playbook opvragen:
+
+	Get-AzureAutomationJob –RunbookName PSAutomationStarter –AutomationAccountName psautomation
+
+
+
+Als deze complete is, dan bekijk je de output met behulp van de id, die je van vorige output hebt gekregen
+
+	Get-AzureAutomationJobOutput –Id 9da91f24-e5c6-4864-b85e-856ed87345a6 –Stream Any –AutomationAccountName psautomation
+
+Je kan dit ook dagelijks doen:
+
+	New-AzureAutomationSchedule –Name "DailyReport" –StartTime (Get-Date).AddDays(1) –ExpiryTime (Get-Date).AddDays(31) –Description "Daily report of VMs" –AutomationAccountName psautomation
+
+Dit moet je aan je huidige runbook toevoegen:
+
+	Register-AzureAutomationScheduledRunbook –ScheduleName "DailyReport" –Name "PSAutomationStarter" –AutomationAccountName psautomation
+
+Je kan deze ook terug verwijderen uit je runbook:
+
+	Unregister-AzureAutomationScheduledRunbook –ScheduleName "DailyReport" –Name "PSAutomationStarter" –AutomationAccountName psautomation
+
+
+En je kan ook je schedule verwijderen
+
+	Remove-AzureAutomationSchedule –Name "DailyReport" –AutomationAccountName psautomation
+
+Je kan ook je runbook volledig verwijderen:
+
+	Remove-AzureAutomationRunbook –Name PSAutomationStarter –AutomationAccountName psautomation
+
+
+

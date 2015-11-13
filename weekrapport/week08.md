@@ -5,21 +5,18 @@
 
 | Student  | Aanw. | Opmerking |
 | :---     | :---  | :---      |
-| student1 |       |           |
-| student2 |       |           |
-| student3 |       |           |
-| student4 |       |           |
+| Lucas |       |           |
+| Daan |       |           |
+| Lara |       |           |
+| Jordi |       |           |
 
 ## Wat heb je deze week gerealiseerd?
 
 ### Algemeen
 
-[Afbeelding huidige toestand Kanban-bord(en) invoegen]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/toggleweek8.PNG)
 
-* ...
-* ...
-
-[Afbeelding teamoverzicht tijdregistratie onderverdeeld per deelopdracht]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/huboardweek8.PNG)
 
 ### Lucas
 
@@ -28,32 +25,39 @@
 
 ![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week8_Lucas_Toggl.PNG)
 
-### Student 2
+### Daan
 
-* ...
+* Powershell script verder afgewerkt
+* Cheatsheet aangevuld
 
-[Afbeelding individueel rapport tijdregistratie]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week8_Daan_toggle.PNG)
 
-### Student 3
 
-* ...
 
-[Afbeelding individueel rapport tijdregistratie]
+### Lara
 
-### Student 4
-
-* ...
+![](https://i.gyazo.com/c9d2cbdf9ba253f1017e5c336d6bee4e.png)
 
 [Afbeelding individueel rapport tijdregistratie]
+
+### Jordi
+
+* Powershell volledig afgewerkt
+* Cheatsheet aanvullen
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week8_Jordi_toggle.PNG)
 
 ## Wat plan je volgende week te doen?
 
 ### Algemeen
 ### Lucas
 Powershell boek en monitoring testen
-### Student 2
+### Daan
+Lampstack testen met JMeter.
 ### Student 3
-### Student 4
+### Jordi
+
+Verder werken aan de lampstack, tweede gedeelte van de opdracht
 
 ## Waar hebben jullie nog problemen mee?
 
