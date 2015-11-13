@@ -70,3 +70,46 @@ De soort input die elke parameter verwacht wordt ook weergegeven in de help best
 
 - De naam van een commando begint altijd met een standaard werkwoord.
 - Een alias een een bijnaam voor een commando. Dit wordt gebruikt om een korter alternatief te geven voor lange namen.
+
+Enkele shortcuts bij het invoeren van commando's:   
+   
+* Inkorten van parameters. Je moet genoeg van de naam ingegeven hebben zodat er geen verwarring is met andere parameters. (Als je Tab typt vervolledigt Powershell de naam ook.  
+* Parameter kunnen ook hun eigen aliassen hebben.    
+* Positionele parameters
+
+##H5 Werken met providers
+
+Een Powershell provider is een adapter. Het neemt een soort van data opslag en laat het lijken als een harde schijf.     
+Deze provider creëert een PSDrive, die drive verbindt dan met een echte data opslagplaats. Dit werkt analoog zoals in Windows Explorer, maar een PSDrive kan veel meer dan alleen verbinden met schijven. Je kan cmdlets gebruiken om de data van een PSDrive te zien en manipuleren. Meestal hebben deze cmdlets het woord "Item" in hun naam. Maar pas op niet alle providers ondersteunen alle cmdlets.   
+
+Een filesysteem navigeren:   
+
+* `Set-Location - Path` "path" of `cd` "path" om de shell zijn huidige locatie te veranderen.
+* `new-item` naam om een nieuw item aan te maken. Aangezien items generiek zijn moet je eerst nog het juiste type specificeren. 
+* `mkdir` werkt hier ook maar maakt direct een nieuw directory aan.
+* gebruik de parameter `-LiteralPath` als je geen karakters als wildcards wilt interpreteren.
+
+##H6: De pipeline
+ 
+Een pipeline wordt gebruikt om commando's aan elkaar te verbinden. Zo kan een commando zijn output direct naar een ander commando sturen. 
+
+Bijvoorbeeld het exporten naar een csv file:
+
+		Get-Process | Export-CSV procs.csv
+
+Pipen naar een file kan via:
+
+		Dir > DirectoryList.txt
+
+De > is een shortcut die eigenlijk het volgende doet:
+
+		Dir | Out-File DirectoryList.txt
+
+Soms is het beter om de 2de methode te gebruiken aangezien je zo extra parameters kan meegeven.
+
+Alle commando's die het systeem aanpassen hebben een intern gedefinieerd "impact level". Dit is ingesteld door de maker van het commando en kan niet veranderd worden. Wanneer het impact level van het commando hoger of gelijk is aan het level van de shell, dan vraagt de shell automatisch "Are you sure?". Dit kan je vermijden door de parameter `-confirm` toe te voegen.
+
+Als je een file creëert met `Export-` dan is het best om dit te lezen via `Import-`.
+
+##H7 Commando's toevoegen
+
