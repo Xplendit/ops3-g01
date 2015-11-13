@@ -57,3 +57,16 @@ De soort input die elke parameter verwacht wordt ook weergegeven in de help best
 
 ##H4. Commando's runnen##
 
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/Lucas/cmds.PNG)
+
+- Eerst is de naam van het commando.
+- De eerste parameter is -LogName met als waarde Security.
+- De tweede parameter heeft 2 waardes gescheiden door een komma.
+- De laatste parameter is een switch parameter (deze heeft dus geen waarde).
+- Als er spaties of puntjes in de waarde komen dan moeten deze tussen quotaties " " staan.
+- Der is altijd een verplichte spatie tussen de naam en de parameter of waarde.
+- Parameters beginnen altijd met een dash -.
+- Niet hoofdlettergevoelig.   
+
+- De naam van een commando begint altijd met een standaard werkwoord.
+- Een alias een een bijnaam voor een commando. Dit wordt gebruikt om een korter alternatief te geven voor lange namen.
