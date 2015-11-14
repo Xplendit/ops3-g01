@@ -125,3 +125,37 @@ De eerste stappen zijn conform aan de vorige punten. Eerst zoeken we terug de ju
 ![iisinstall](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/iisinstall.png?raw=true)
 
 
+### 4. Managing Hyper-V with powershell
+
+Conform aan hoofdstuk 3 zullen we enkel de installatie hiervan bespreken.
+
+Eerst creeer je de mappen waar de VM en VHDx bestanden in zullen staan. `New-Item E:\VM -ItemType Directory`en `New-Item E:\VHD -ItemType Directory`.
+Als je de Hyper-V server niet gebruikt moet je de Hyper-V rol nog installeren met `Install-WindowsFeature Hyper-V IncludeManagementTools -Restart`.
+Nu stel je Hyper-H in, zodat het de juist aangemaakte mappen gebruikt. Gebruik hiervoor `Set-VMHost -ComputerName HV01 -VirtualHardDiskPath E:\vhd -VirtualMachinePath E:\vm`.
+Handig aan PS is dat je ook je gemaakte veranderingen kunt controlleren. Hier doe je dit met `Get-VMHost -ComputerName HV01 | Format-List *`.
+
+Een volgende stap kan het aanmaken van een VM zijn. Dit doe je met `New-VM -ComputerName HV01 -Name Accounting02 -MemoryStartupBytes 512 MB 
+-NewVHDPath "e:\VM\Virtual Hard Disks\Accounting02.vhdx" 
+-NewVHDSizeBytes 100GB -SwitchName Production`.
+Controleren doe je terug met `Get-VM -ComputerName HV01 -Name Accounting02 | FOrmat-List *`
+
+### 5. Managing Storage with PS
+
+DIt zullen we met een simpel voorbeeld aantonen. Laten we de permissies van een Excel bestand aanpassen.  Eerst moet je natuurlijk de permissie weten, dit steek je misschien best in een variabele, we zullen deze $acl noemen. `$acl = Get-Acl M:\Sales\Goals.xls`. Nu pas je een permissie aan met `$ace = New-Object System.Security.AccessCOntrol.FileSystemAccessRUle "joe.smith","FullCOntrol","Allow"`. Daarna voeg je deze toe aan $acl met `$acl.SetAccessRule($ace)`. Nu nog de permissies aan de file toevoegen. `$acl | set-acl M:\Sales\goals.xls`.
+
+### 6. Managing network shares with PS
+
+Sla ik over, dit gaat een beetje te diep in detail.
+
+
+### 7. Managing WIndows updates with PS
+
+Nu zullen we WS update services installeren. DIt doe je emt `Install-WindowsFetaure UpdateServices -IncludeManagementTools`. 
+
+### 8. Managing Printers with PS
+
+We zullen enkel bespreken hoe je een print server moet installeren. Dit doe je met `Add-WindowsFeature Print-Server -IncludeManagementTools`. Daarna maak je de printer poort `Add-PrinterPort -Name Accounting_HP -PrinterHOstAddress "10.0.0.200"`. Natuurlijk moet er ook een printer driver worden toegevoegd: `Add-PrinterDriver -Name "HP LaserJet 9000 PCL6 Class Driver"`. Nu voeg je de printer toe met `Add-Printer -Name "Accounting HP" -DriverName "HP LaserJet 9000 PCL6 Class Driver" -PortName Accounting_HP`. Als laatste share je de printer: `Set-Printer -Name "Accounting HP" -Shared $true -PUblished $true`.COntroleren kun je terug met `Get-Printer | Format-Table -AutoSIze`.
+
+### 9. Troubleshooting servers with PS
+
+Om te testen of een server reageert, kun je hem het beste pinnen. Dit doe je met Test-Connection -ComputerName corpdc1
