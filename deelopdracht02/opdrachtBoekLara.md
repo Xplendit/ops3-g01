@@ -158,4 +158,12 @@ We zullen enkel bespreken hoe je een print server moet installeren. Dit doe je m
 
 ### 9. Troubleshooting servers with PS
 
-Om te testen of een server reageert, kun je hem het beste pinnen. Dit doe je met Test-Connection -ComputerName corpdc1
+Om te testen of een server reageert, kun je hem het beste pinnen. Dit doe je met `Test-Connection -ComputerName corpdc1`. WIndows heeft ook enkele ingebouwde troubleshooting pakketten. Deze start je met `Invoke-TroubleshootingPack (Get-TroubleShootingPack C:\Windows\diagnostics\system\networking)`. Er bestaan er meer dan enkel \networking. Deze kun je oplijsten met `Get-ChildItem C:\windows\diagnostics\system`.
+
+### 11. Inventorying Servers with PS
+
+Hier gaan we informatie opvragen van het lokale systeem. Dit doe je met de Get-Disk functie. SOftware inventoriseren doe je met `Get-WindowsFeature | Where-Object Install'State -EQ "Installed"` . 
+
+### 12. Server Backup
+
+Natuurlijk oet er eerst weer een policy gedownload worden. Dit doe je met `Add-WIindowsFeature WIndows-Server-Backup -IncludeManagementTools`. Daarna maak je een neiuwe back-up policy en steek je die in een variabele met `$mypol = New-WBPolicy`. Dan voe je daar de backup sources aan toe met bv: `$mypol | add-wbsystemstate`, `$sourceVOl =Get-WBVolume C: Add-WBVolume -Policy $MyPol -Volume $ sourceVOl`. Daarna definieer je het backup doel: `$targetvol=new-wbbackuptarget -Volume (Get-WBColume E:) Add-WBBackupTarget -Policy $mypol -Target $targetvol`. Dan definieer je de schedule `Set-WBSchedule -Policy $mypol -Schedule ("12/17/2015 9:00:00 PM")` en sla je hem op met `Set-WBPolicy -Policy $mypol`.
