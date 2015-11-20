@@ -1,7 +1,7 @@
-# Voortgangsrapport week nn
+# Voortgangsrapport week 09
 
-* Groep:
-* Datum:
+* Groep:01
+* Datum:20/11/2015
 
 | Student  | Aanw. | Opmerking |
 | :---     | :---  | :---      |
@@ -41,9 +41,11 @@
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 4
+### Daan
 
-* ...
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week9_Daan_toggle.PNG)
+* Testen van lampstack
+* powershell script verder uitwerken
 
 [Afbeelding individueel rapport tijdregistratie]
 
