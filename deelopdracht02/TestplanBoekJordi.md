@@ -9,18 +9,45 @@
 Auteur(s) testplan: Jordi
 
 - [ ] Boek gekozen
-- [ ] Hoofdstuk 1 gelezen en gedocumenteerd
-- [ ] Hoofdstuk 2 gelezen en gedocumenteerd
-- [ ] Hoofdstuk 3 gelezen en gedocumenteerd
-- [ ] Hoofdstuk 4 gelezen en gedocumenteerd
-- [ ] Hoofdstuk 5 gelezen en gedocumenteerd
-- [ ] Hoofdstuk 6 gelezen en gedocumenteerd
-- [ ] Hoofdstuk 7 gelezen en gedocumenteerd
-- [ ] Hoofdstuk 8 gelezen en gedocumenteerd
-- [ ] Hoofdstuk 9 gelezen en gedocumenteerd
-- [ ] Hoofdstuk 10 gelezen en gedocumenteerd
-- [ ] Hoofdstuk 11 gelezen en gedocumenteerd
-- [ ] Hoofdstuk 12 gelezen en gedocumenteerd
+- [ ] Hoofdstuk 1
+	- [ ] Gelezen
+	- [ ] Gedocumenteerd
+- [ ] Hoofdstuk 2 
+	- [ ] Gelezen
+	- [ ] Gedocumenteerd
+- [ ] Hoofdstuk 3
+	- [ ] Gelezen
+	- [ ] Gedocumenteerd
+- [ ] Hoofdstuk 4
+	- [ ] Gelezen
+	- [ ] Gedocumenteerd
+- [ ] Hoofdstuk 5 
+	- [ ] Gelezen
+	- [ ] Gedocumenteerd
+- [ ] Hoofdstuk 6 
+	- [ ] Gelezen
+	- [ ] Gedocumenteerd
+- [ ] Hoofdstuk 7 
+	- [ ] Gelezen
+	- [ ] Gedocumenteerd
+- [ ] Hoofdstuk 8 
+	- [ ] Gelezen
+	- [ ] Gedocumenteerd
+- [ ] Hoofdstuk 9 
+	- [ ] Gelezen
+	- [ ] Gedocumenteerd
+- [ ] Hoofdstuk 10
+	- [ ] Gelezen
+	- [ ] Gedocumenteerd
+- [ ] Hoofdstuk 11
+	- [ ] Gelezen
+	- [ ] Gedocumenteerd
+- [ ] Hoofdstuk 12 
+	- [ ] Gelezen
+	- [ ] Gedocumenteerd
 - [ ] Spellingscontrole
+- [ ] Cheatsheet aanwezig
+
+Onder documenteren verstaan we een samenvatting gemaakt van het hoofdstuk
 
 #### Testen rapport ####
