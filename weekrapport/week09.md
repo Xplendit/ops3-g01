@@ -1,7 +1,7 @@
-# Voortgangsrapport week 09
+# Voortgangsrapport week nn
 
-* Groep: 03
-* Datum: 20/11/2015
+* Groep:
+* Datum:
 
 | Student  | Aanw. | Opmerking |
 | :---     | :---  | :---      |
@@ -21,13 +21,11 @@
 
 [Afbeelding teamoverzicht tijdregistratie onderverdeeld per deelopdracht]
 
-### Lucas
+### Student 1
 
-* Powershell boek samenvatten
-* Cisco labo
-* Monitoring
+* ...
 
-![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week9_Lucas_Toggl.PNG)
+[Afbeelding individueel rapport tijdregistratie]
 
 ### Student 2
 
@@ -35,9 +33,11 @@
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 3
+### Lara
 
-* ...
+![](https://i.gyazo.com/e9ccb057b2a686262069d4239182d6ca.png)
+ * Boek uitgelezen
+ * Testen verder verdiept
 
 [Afbeelding individueel rapport tijdregistratie]
 
@@ -50,10 +50,7 @@
 ## Wat plan je volgende week te doen?
 
 ### Algemeen
-### Lucas
-* monitoring
-* powershell boek samenvatten
-* cisco labo verslag 
+### Student 1
 ### Student 2
 ### Student 3
 ### Student 4
