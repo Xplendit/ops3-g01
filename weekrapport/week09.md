@@ -20,9 +20,11 @@
 
 ### Student 1
 
-* ...
+* Cisco labo 
+* Powershell boek
+* Monitoring plugins uitbreiden
 
-[Afbeelding individueel rapport tijdregistratie]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week9_Lucas_Toggl.PNG)
 
 ### Jordi
 
@@ -50,7 +52,10 @@
 ## Wat plan je volgende week te doen?
 
 ### Algemeen
-### Student 1
+### Lucas
+
+Monitoring plugins uitbreiden en
+Powershell boek samenvatten.
 ### Jordi
 
 Virtual academy volledig afwerken en herhalen voor test vrijdag.
