@@ -24,11 +24,12 @@
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 2
+### Jordi
 
-* ...
+* Testen lampstack
+* Virtual Academy
 
-[Afbeelding individueel rapport tijdregistratie]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week9_Jordi_toggle.PNG)
 
 ### Lara
 
@@ -50,7 +51,9 @@
 
 ### Algemeen
 ### Student 1
-### Student 2
+### Jordi
+
+Virtual academy volledig afwerken en herhalen voor test vrijdag.
 ### Student 3
 ### Student 4
 
