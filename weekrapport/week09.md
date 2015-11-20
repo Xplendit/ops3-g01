@@ -14,12 +14,9 @@
 
 ### Algemeen
 
-[Afbeelding huidige toestand Kanban-bord(en) invoegen]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/toggleweek9.PNG)
 
-* ...
-* ...
-
-[Afbeelding teamoverzicht tijdregistratie onderverdeeld per deelopdracht]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/huboardweek9.PNG)
 
 ### Student 1
 
