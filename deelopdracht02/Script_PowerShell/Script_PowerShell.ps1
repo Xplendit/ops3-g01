@@ -103,4 +103,40 @@ function get-LockoutPolicy {
 Get-ADDefaultDomainPasswordPolicy
 }
 
+function Add-Operator {
+    [CmdletBinding()]
+    Param(
+        [string[]]$Groups = @("Backup","Print","Account"),
+        [string[]]$Members = "Femke Van de Vorst"
+    )
+    Foreach($Group in $Groups) {
+        Foreach($Member in $Members) {
+            ([ADSI]"WinNT://./" + $Group + " Operators").add("WinNT://" + $Member + ",user")
+        }
+    }
+}
+
+
+function Remove-SharingProfile{
+[cmdletbinding()]
+param(
+[string]$naam = "Femke Van de Vorst"
+)
+set-ADUser -Identity $naam -ProfilePath ""
+}
+
+function Set-PrinterStatus {
+    [CmdletBinding()]
+    Param(
+        [string]$PrinterName = "Microsoft XPS Document Writer",
+		[string]$Status = "pause"
+    )
+	
+    $Filter = "Name='" + $PrinterName + "'"
+    Get-WmiObject -Class Win32_Printer -Filter $Filter | Invoke-WmiMethod -Name $Status
+}
+
+
+
+
  

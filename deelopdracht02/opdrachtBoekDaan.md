@@ -316,3 +316,4 @@ Wanneer je meerdere input parameters wilt gebruiken is het belangrijk dat je u f
 	Function code goes here
 	} #end Function-Name 
 
+###Using functions to encapsulate business logic###
