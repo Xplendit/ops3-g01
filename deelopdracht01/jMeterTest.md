@@ -12,25 +12,31 @@ http://www.phpbuilder.com/columns/bommarito20030610.php3?page=2
 
 ## Concrete testen
 ### Wordpress
-- [ ] 10 users aanmaken
-- [ ] 20 users aanmaken
-- [ ] 30 users aanmaken
-- [ ] 40 users aanmaken
-- [ ] 50 users aanmaken
+
+Prerequisites:
+* 512 MB CPU geheugen
+* -c = aantal users
+* -t = testtijd
+* -l = genereert logfile
+* BOmbard installeren
+* 
 
 
-- [ ] 10 artikels aanmaken
-- [ ] 20 artikels aanmaken
-- [ ] 30 artikels aanmaken
-- [ ] 40 artikels aanmaken
-- [ ] 50 artikels aanmaken
+- [x] 10 users die simultaan /wordpress gebruiken
+- [x] 20 users die simultaan /wordpress gebruiken
+- [x] 30 users die simultaan /wordpress gebruiken
+- [x] 40 users die simultaan /wordpress gebruiken
+- [X] 50 users die simultaan /wordpress gebruiken
+- [X] 60 users die simultaan /wordpress gebruiken
+- [X] 70 users die simultaan /wordpress gebruiken
+- [ ] 80 users die simultaan /wordpress gebruiken
 
 
-- [ ] 5 users loggen simultaan in
-- [ ] 10 users loggen simultaan in
-- [ ] 15 users loggen simultaan in
-- [ ] 20 users loggen simultaan in
-- [ ] 25 users loggen simultaan in
+- [x] 10 artikels aangemaakt
+- [x] 20 artikels aangemaakt
+- [x] 30 artikels aangemaakt
+- [x] 40 artikels aangemaakt
+- [x] 50 artikels aangemaakt
 
 
 - [ ] 10 requests per seconde
@@ -39,3 +45,9 @@ http://www.phpbuilder.com/columns/bommarito20030610.php3?page=2
 - [ ] 10000 requests per seconde
 - [ ] 100000 requests per seconde
 
+
+
+
+http://blog.modsaid.com/2014/04/stress-testing-with-siege-and-bombard.html
+https://www.linode.com/docs/tools-reference/tools/load-testing-with-siege
+https://www.euperia.com/website-performance-2/speed-testing-your-website-with-siege-part-one/720

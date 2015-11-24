@@ -79,7 +79,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box = BOX_NAME
   config.vm.box_url = BOX_URL
-
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 2048 
+    v.cpus = 2
+  end  
   config.ssh.insert_key = false # Keep using the insecure key
 
   hosts.each do |host|
