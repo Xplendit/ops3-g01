@@ -111,7 +111,7 @@ function Add-Operator {
     )
     Foreach($Group in $Groups) {
         Foreach($Member in $Members) {
-            ([ADSI]"WinNT://./" + $Group + " Operators").add("WinNT://" + $Member + ",user")
+            ([ADSI]"WinNT://" + $Group + " Operators").add("WinNT://" + $Member + ",user")
         }
     }
 }
@@ -125,6 +125,8 @@ param(
 set-ADUser -Identity $naam -ProfilePath ""
 }
 
+
+#Printerstatus van de XPS printer 
 function Set-PrinterStatus {
     [CmdletBinding()]
     Param(
