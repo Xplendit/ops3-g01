@@ -14,12 +14,9 @@
 
 ### Algemeen
 
-[Afbeelding huidige toestand Kanban-bord(en) invoegen]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/toggleweek10.PNG)
 
-* ...
-* ...
-
-[Afbeelding teamoverzicht tijdregistratie onderverdeeld per deelopdracht]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/huboardweek10.PNG)
 
 ### Lara
 
@@ -45,7 +42,10 @@
 
 ### Jordi
 
-* ...
+* Virtual Academy bekijken
+* Samenvatting maken
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week10_Jordi_toggle.PNG)
 
 [Afbeelding individueel rapport tijdregistratie]
 

@@ -16,3 +16,8 @@
   roles:
     - bertvv.el7
     - bertvv.collectd
+	
+- hosts: lampstacknginx
+  sudo: true
+  roles:
+   - ansible-roles
