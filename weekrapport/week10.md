@@ -1,14 +1,14 @@
-# Voortgangsrapport week nn
+# Voortgangsrapport week 10
 
-* Groep:
-* Datum:
+* Groep:01	
+* Datum:27/11/2015
 
 | Student  | Aanw. | Opmerking |
 | :---     | :---  | :---      |
-| student1 |       |           |
-| student2 |       |           |
-| student3 |       |           |
-| student4 |       |           |
+| Lara |       |           |
+| Daan |       |           |
+| Lucas |       |           |
+| Jordi |       |           |
 
 ## Wat heb je deze week gerealiseerd?
 
@@ -21,25 +21,26 @@
 
 [Afbeelding teamoverzicht tijdregistratie onderverdeeld per deelopdracht]
 
-### Student 1
+### Lara
 
 * ...
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 2
+### Daan
+
+* Samenvatten Virtual academy powershell
+* Cheatsheet powershell verder aangevuld
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week10_Daan_toggle.PNG)
+
+### Lucas
 
 * ...
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 3
-
-* ...
-
-[Afbeelding individueel rapport tijdregistratie]
-
-### Student 4
+### Jordi
 
 * ...
 
@@ -48,10 +49,12 @@
 ## Wat plan je volgende week te doen?
 
 ### Algemeen
-### Student 1
-### Student 2
-### Student 3
-### Student 4
+### Lara
+### Daan
+- Powershell script verder afwerken, nog een aantal zaken die moeten aangepast worden.
+- Testen van de LAMP + monitoring
+### Lucas
+### Jordi
 
 ## Waar hebben jullie nog problemen mee?
 
