@@ -23,7 +23,8 @@
 
 ### Lara
 
-* ...
+![](https://i.gyazo.com/2aa09a38734b34ed4d0f84a51f1d32c3.png)
+* Testing
 
 [Afbeelding individueel rapport tijdregistratie]
 
@@ -50,6 +51,7 @@
 
 ### Algemeen
 ### Lara
+- Testen afwerken
 ### Daan
 - Powershell script verder afwerken, nog een aantal zaken die moeten aangepast worden.
 - Testen van de LAMP + monitoring
