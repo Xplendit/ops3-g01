@@ -36,9 +36,11 @@
 
 ### Lucas
 
-* ...
+* virtual acadamy powershell
+* monitoring plugins
+* powershell boek
 
-[Afbeelding individueel rapport tijdregistratie]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week10_Lucas_toggl.PNG)
 
 ### Jordi
 
@@ -54,6 +56,9 @@
 - Powershell script verder afwerken, nog een aantal zaken die moeten aangepast worden.
 - Testen van de LAMP + monitoring
 ### Lucas
+- Powershell boek samenvatten
+- Monitoring afwerken
+- Documentatie bijwerken
 ### Jordi
 
 ## Waar hebben jullie nog problemen mee?
