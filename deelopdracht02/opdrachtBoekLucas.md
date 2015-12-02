@@ -217,3 +217,184 @@ Synopsis van alles dat tot nu toe in het boek behandeld is, hiervan heb ik dus g
 
 ##H13 Remote control##
 
+Remote werkt gelijkaardig als Telnet en andere remote controleer technieken. Wanneer je een commando runt, runt het op de remote computer en retourneert het alleen de output. PowerShell gebruikt hiervoor Web Services for Management (WS-MAN). Dit verloopt volledig via HTTP (of HTTPS). Powershell verstuurt deze objecten over het netwerk door de objecten eerst te **serializen** naar XML. De XML wordt dan verzonden over het netwerk en wordt uiteindelijk ge**deserialized** door de computer terug in object waarmee je in PowerShell kunt werken.    
+Maar deze "serialized-then-deserialized" objecten zijn alleen maar snapshots, ze updaten zichzelf niet continu en tonen alleen de staat op het exacte moment dat ze geserializeerd werden. Bovendien kan je het object niets laten doen.
+
+### WinRM
+
+WinRM (Windows Remote Management) moet geconfigureerd worden op de computer die commando's zal ontvangen. WinRM werkt als een regelaar, het beslist welke applicatie met de binnenkomende dingen moet werken. PowerShell moet dan ook geconfigureerd worden als een eindpunt bij WinRM. (Dit moet je niet op iedere computer doen, je kan het ook instellen met een Group Policy Object (GPO.)     
+WinRM v2 gebruikt default TCP poort 5985 voor HTTP en 5986 voor HTTPS. Als je de poorten moet veranderen kan dit door volgende commando ("1234" verander je door de nieuwe poort):
+
+		Winrm set winrm/config/listener?Address=*+Transport=HTTP
+		➥@{Port="1234"}
+
+### One-to-one
+
+Alle commando's die je runt runnen rechtstreeks op de computer naar waar je remote.
+Om een sessie te starten doe je (Server-R2 verander je door de juiste naam):
+
+		Enter-PSSession -computerName Server-R2
+		
+Als alles goed verloopt krijg je een shell prompt die aanduid dat je op de gekozen plaats bezig bent.
+		[server-r2] PS C:\>
+Je kunt de connectie beëindigen door `Exit-PSSession` of door het venster te sluiten.
+
+### One-to-many
+
+Hiermee kun je een commando naar verschillende computers tegelijk sturen. Dit gebeurt allemaal door de `Invoke-Command`cmdlet.
+
+		Invoke-Command -computerName Server-R2,Server-DC4,Server12
+		➥-command { Get-EventLog Security -newest 200 |
+		➥Where { $_.EventID -eq 1212 }}
+
+(De -command parameter is een alias voor de -scriptbook parameter.)   
+Je kunt de computernamen ook allemaal in een tekstfile steken en deze dan tegelijk ophalen door:
+
+		Invoke-Command -command { dir }
+		➥-computerName (Get-Content webservers.txt)
+
+Of je kan filteren zoals bijvoorbeeld:
+
+		Invoke-Command -command { dir } -computerName (
+		➥Get-ADComputer -filter * -searchBase "ou=Sales,dc=company,dc=pri" |
+		➥Select-Object -expand Name )
+
+###Enkele tips
+
+1. Door het `-SessionOption` kan je een set van opties meegeven die de manier waarop de sessie gecreëerd wordt specificeren. Deze parameter accepteer een PSSessionOption opbject.     
+Hier open je een sessie en sla je de naam check over: 
+
+		PS C:\> Enter-PSSession -ComputerName DONJONESE408
+		➥-SessionOption (New-PSSessionOption -SkipCNCheck)
+		[DONJONESE408]: PS C:\Users\donjones\Documents>
+
+
+2. Remoting werkt alleen met de remote computer zijn echte naam.    
+3. Remoting is ontworpen om min of meer automatisch te configureren binnen een domein. Als alle computers en jouw user account zich in hetzelfde (of vertrouwde) domein bevinden zal alles normaal goed verlopen.  
+4. PowerShell wordt automatisch geopend en gesloten voor ieder nieuw commando dat je naar de remote computer stuurt. Als je een hele reeks gerelateerde commando's wilt runnen doe je dit best allemaal in één commando.
+5. Zorg er absoluut voor dat je PowerShell als een administrator aan het runnen bent.
+6. Bij andere firewallen dan de basis Windows Firewall zet remoting niet automatisch de nodige firewall excepties op. Die moet je dan manueel doen.
+7. Alle settings in een GPO overschrijven alles wat je lokaal doet.
+
+## H14 Windows Management Instrumentation (WMI) gebruiken
+
+WMI organiseert de duizenden stukken van management informatie. Op het hoogste level is WMI georganiseerd in **namespaces**. Dit kun je zien als een folder dat verbindt met een specifiek product of technologie. Binnen een namespace is WMI verdeeld in verschillende **klassen**. Een klasse representeert een management component dat WMI kan ondervragen. Wanneer je één of meerdere management componenten hebt dan heb je een gelijk aantal **instances** van die klasse. Een instance is een voorkomen in de werkelijkheid van iets dat door de klasse gerepresenteerd wordt.
+
+In PowerShell heb je 2 manieren om met WMI om te gaan:
+1. De "WMI cmdlets" zoals `Get-WmiObject` en `Invoke-WmiMethod`. 
+2. De nieuwe "CIM cmdlets" zoals `Get-CimInstance` en `Invoke-CimMethod`. Deze zijn gelijkaardig aan de WMI cmdlets maar worden meer ondersteund door Microsoft.
+
+### Get-WmiObject
+
+Hierbij kun je de naam van een namespace, klasse of remote computer en andere, gebruiken om alle instances van die klasse van de computer op te halen.   
+3 voorbeelden om dit commando te gebruiken:
+
+		Get-WmiObject -namespace root\cimv2 -class win32_desktop
+
+		PS C:\> Get-WmiObject win32_desktop
+		PS C:\> gwmi antispywareproduct -namespace root\securitycenter2
+
+Gwmi accepteert ook de `-filter` parameter om de output meer te filteren.
+
+## Get-CimInstance
+
+Werkt gelijkaardig als Gwmi maar er zijn enkele verschillen:
+	* je gebruikte `-ClassName` ipv `-Class`)
+	* Er is geen `-List` parameter, in plaats daarvan gebruik je `Get-CimClass` en de `-Namespace` om klassen te listen.
+	* Er is geen `-Credential` parameter
+
+## H15 Multitasking met achtergrond jobs
+
+PowerShell is een 'single-threaded' applicatie, dit wil zeggen dat je maar één iets tegelijk kunt uitvoeren. Maar door zijn achtergrond job functionaliteiten kan PowerShell commando's in een aparte achtergrond thread steken. Dit zorgt ervoor dat het commando in de achtergrond te laten lopen terwijl je iets anders doet in de shell.   
+Normaal laat PowerShell commando's **synchroon** lopen. Je voert een commando uit en moet wachten tot het klaar is voor je een volgend commando kan beginnen.   
+Als je een job naar de achtergrond plaats dan kan PowerShell **asynchroon** lopen.
+
+### local job
+
+Commando dat min of meer volledig op de eigen computer in de achtergrond loopt.   
+Om een job te starten gebruik je het `Start-Job`commando. Een `-scriptblock` parameter laat je het commando('s) die je wilt uitvoeren specificeren.  
+
+		PS C:\> start-job -scriptblock { dir }
+
+		Id Name State HasMoreData Location
+		-- ---- ----- ----------- --------
+		1 Job1 Running True localhost
+
+De commando's mogen ook remote computers aanhalen.
+
+### WMI als een job
+
+Gwmi kan een of meer remote computers contacteren maar doet dit sequentieel. Dit kan een lange tijd duren dus is het handig om dit commando in de achtergrond uit te voeren. dit doe je door de parameter `asJob` te gebruiken.
+		
+		PS C:\> get-wmiobject win32_operatingsystem -computername
+		➥(get-content allservers.txt) -asjob
+
+Get-CimInstance heeft geen -asJob parameter dus zul je Start-Job of Invoke-Command hiervoor moeten gebruiken.
+
+### Remoting als een job
+
+Bij de Invoke-Command cmdlet kan je ook een -AsJob parameter meegeven. Het commando dat je meegeeft in de -scriptblock (of alias -command) zal parallel naar iedere computer gestuurd worden. 
+
+		PS C:\> invoke-command -command { get-process }
+		➥-computername (get-content .\allservers.txt )
+		➥-asjob -jobname MyRemoteJob
+
+### Resultaten van een job
+
+`Get-Job` cmdlet haalt elke job die in het systeem zit op en laat de status zien. Je kunt ook een bepaalde job specificeren.
+
+		PS C:\> get-job -id 1 | format-list *
+
+		State : Completed
+		HasMoreData : True
+		StatusMessage :
+		Location : localhost
+		Command : dir
+		JobStateInfo : Completed
+		Finished : System.Threading.ManualResetEvent
+		InstanceId : e1ddde9e-81e7-4b18-93c4-4c1d2a5c372c
+		Id : 1
+		Name : Job1
+		ChildJobs : {Job2}
+		Output : {}
+		Error : {}
+		Progress : {}
+		Verbose : {}
+		Debug : {}
+		Warning : {}
+
+`Receive-Job` wordt gebruikt om de resultaten van een job op te halen. Maar voor je dit runt moet je op enkele zaken letten.
+	* Je moet een job speciferen. Dit kan door de job ID of job name mee te geven of door de output van Get-Job te pipen naar Receive-Job.
+	* De resultaten van de parent-job zullen ook de resultaten van alle child-jobs bevatten.
+	* Normaal gezien wordt de job uit de job output cache gehaald als je de resultaten opvraagt, dus je kan ze geen tweede keer opvragen. Door `-keep` te gebruiken hou je een kopie bij in het geheugen of je kan de resultaten naar CliXML sturen om zo een kopie bij te houden.
+	* Het resultaat kan een gedeserializeerd object zijn.
+		
+		PS C:\> receive-job -name myremotejob | sort-object PSComputerName |
+		➥Format-Table -groupby PSComputerName
+
+
+Alle jobs bestaan uit één top level parent-job en minstens één child-job.
+
+		PS C:\> get-job -id 1 | select-object -expand childjobs
+
+### Nuttige commando's
+
+Voor elk kan je een job specificeren door ofwel de ID of de naam of de job nemen en deze pipen naar één van de volgende commando's.
+
+*  `Remove-Job` Verwijdert een job
+		PS C:\> get-job | where { -not $_.HasMoreData } | remove-job
+*  `Stop-Job` Beëindigt een job die vast lijkt te zitten, alle resultaten die tot dat punt behaalt waren worden nog behouden.
+*  `Wait-Job` Dit is handig voor een script als je wilt dat het script alleen maar verdergaat als de job klaar is.
+
+### Jobs plannen
+
+* `New-JobTrigger` maakt een trigger die definieert wanneer de taak zal uitgevoerd worden.
+* `New-ScheduledTaskOption` geeft opties mee aan de job.
+* `Register-ScheduledJob` registreert de job bij de TaskScheduler.
+
+		PS C:\> Register-ScheduledJob -Name DailyProcList -ScriptBlock { Get-Proces
+		s } -Trigger (New-JobTrigger -Daily -At 2am) -ScheduledJobOption (New-Sched
+		uledJobOption -WakeToRun -RunElevated)
+
+## H16 Werken met veel objecten, één per één
+
