@@ -7,7 +7,14 @@
 Collectd is een daemon die de prestatie statistieken verzamelt en de mogelijheid geeft om deze waarden op te slaan.    
 Het verzamelt statistieken over een systeem waar op het loopt en slaat deze op. Deze statistieken kunnen dan gebruikt worden voor de prestatie te meten en systeem capaciteit te plannen.      
 
+###To-Do
 
+* Eigen rol aanmaken
+* Packages installeren voor extra plugins
+* Config files maken voor plugins
+*  yum list available collectd*
+*   sudo systemctl status collectd -l -f
+*   https://github.com/lilswif/yomoni
 
 ##Links
 

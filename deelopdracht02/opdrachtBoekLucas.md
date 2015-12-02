@@ -113,3 +113,107 @@ Als je een file creëert met `Export-` dan is het best om dit te lezen via `Impo
 
 ##H7 Commando's toevoegen
 
+Er zijn 2 soorten extensies in PowerShell: modules en snap-ins. 
+
+1. Snap-ins (`PSSnapin`)       
+	- Bestaat uit één of meer DLL files samen met extra XML files die configuratie settings en help text bevatten. Snap-ins moeten geinstalleerd en geregistreerd zijn voor PowerShell ze herkent.
+	- `get-pssnapin -registered`toont alle beschikbare snap-ins.
+	- `add-pssnapin ` + naam van de snap-in.
+	- Wordt minder en minder gebruikt.
+	-  `remove-pssnapin`
+2. Modules
+	- `PSModulePath` paths waar de modules zich bevinden.
+	- PowerShell auto-discovers alle modules. Help zal dus al werken zelf als ze niet ingeladen zijn.
+	- `remove-module`
+
+##H8 Objecten
+
+###Waarom objecten?
+Windows is een object georiënteerde OS dus is het makkelijk om data te structureren als objecten. Bovendien maken objecten alles makkelijker voor de gebruiker en geven ze die meer kracht en flexibiliteit.
+
+###Get-Member
+`Get-Member`of de alias `gm` wordt gebruikt om meer te leren over een object. De help toont alleen concepten en de command syntax. Gm kan gebruikt worden na iedere cmdlet die een output produceert. 
+
+
+`Sort-object`of `sort` helpt bij het sorteren van objecten en `select-object`helpt bij het selecteren van objecten.
+
+##H9 De pipeline, dieper
+
+**Pipeline parameter binding** is de benaming voor het process dat Powershell gebruikt om te achterhalen welke parameter van een commando de output van een ander commando accepteert. Powershell gebruikt hiervoor 2 methodes.
+
+###Pipeline input ByValue###
+
+Powershell kijkt naar het type van object geproduceert door commandoA en kijkt of er een parameter van commandoB is dat dit type accepteert.
+Je kan dit zelf checken door de output van commando A te pipen naar `Get-Member`. Hier kun je zien welk type object commandoA produceert en dit vergelijk je dan met de full help van commandoB om te zien of er parameter zijn die dat soort data accepteren. 
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/Lucas/H9_byValue.PNG)
+
+###Pipeline input ByPropertyName###
+
+Werkt gelijkaardig als ByValue maar hierbij is het mogelijk om meerdere parameters van commandoB te gebruiken. Het zoekt naar property namen die matchen met parameter namen. Daarna moet het controleren of de parameter input van de pipeline accepteert.
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/Lucas/H9_byProp.PNG)
+
+###Custom propreties###
+
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/Lucas/H9_cusPro.PNG)
+
+* Selecteert alle bestaande properties 
+* Creëert een hast tabel. Begint met `@{` en eindigt met `}`. 
+* De hast tabel bestaat uit één of meer key=value paren, select-object is geprogrammeerd om naar specifieke keys te zoeken.
+* De eerste key kan `Name,N,Label` of `L` zijn. De waarde hiervan is de naam van de proprety die we willen aanmaken.
+* De tweede key kan `Expression` of `E` zijn. De waarde hiervan is een script block die tussen {} staat. Hiertussen gebruik je de `$_` placeholder om naar het bestaande object in de pipeline te referen, gevolgd door een '.'. Dit laat je een proprety van het object in de pipeline of een kolum van CSV file vastpakken. Dit specificeert de content van de nieuwe proprety.
+
+We kunnen ook ronde haakjes gebruiken om de pipeline te helpen. Alles dat in de ronde haakjes staat wordt eerst uitgevoerd (denk aan  in de wiskunde).   
+
+##H10 Formatteren###
+
+Powershell gebruikt al default manier om de output te formatteren, deze manier gaat als volgt bij het uitvoeren van de cmdlet Get-Process: 
+      
+1. De cmdlet plaats objecten van het type System.Diagnostics.Process in de pipeline.   
+2. Op het einde van de pipeline is een onzichtbare cmdlet Out-Default genaamd. Deze neemt de objecten die in de pipeline zitten wanneer alle commando's gerunt zijn.    
+3. Out-Default stuurt deze objecten naar Out-Host (Powershell gebruikt het scherm (de host) als default vorm van output).   
+4. De meeste Out- cmdlets kunnen niet met normale objecten werken, daarom zijn ze zo ontwikkelt dat ze met speciale formatteer instructies aan de slag kunnen. Dus wanneer Out-Host een normaal object krijgt stuurt hij die naar het formatteer systeem.   
+5. Het formatteer systeem kijkt naar het type object en volgt een set interne regels. Door het volgen van deze regels wordt formatteer instructies geproduceerd en deze worden teruggestuurd naar het Out-Host.   
+6. Out-Host volgt deze instructies dan om het scherm te tekenen.
+
+
+Er zijn 4 formatteer cmdlets in PowerShell.
+
+1. Format-Table of Ft.   
+2. Format-List of Fl.
+3. Format-Wide of Fw.
+4. Format-Custom
+
+Enkele tips:
+* De formatteer cdmlets moeten altijd de laatste cmdlets van de pipeline zijn. (Out-File of Out-Printer zijn hier uitzonderingen.)
+* Formatteer maximaal één type object tegelijk.
+
+
+##H11 Filteren en vergelijken##
+
+In de shell kan je op twee manieren filteren. Bij de eerste manier probeer je de cmdlets die informatie zoekt alleen terug te geven wat jij specificeert. In de tweede manier, die iteratief werkt, neem je alles dat het cmdlet je geeft en gebruik je een tweede cmdlet om dit te filteren.      
+
+De eerste manier wordt "early filtering" genoemd en gebruik je liefst zoveel mogelijk. Dit kan zo simpel zijn als gewoon tegen het cmdlet zeggen wat je zoekt (bijvoorbeeld een specifieke naam als parameter meegeven). Veel cmdlets hebben een `-filter` parameter. Dit noemt men de "Filter Left" techniek.
+
+Hierbij zet je de filter criteria zoveel mogelijk naar links. Hoe sneller je filtert hoe minder werk de andere cmdlets moeten doen. Het nadeel is wel dat veel cmdlets verschillende filter technieken gebruiken.
+
+###Vergelijkingsoperatoren###
+
+- `-eq` of gelijk aan.
+- `-ne` of niet gelijk aan.
+- `-ge` en `-le` groter dan of gelijk aan en kleiner dan of gelijk aan.
+- `-gt` en `-lt` groter dan en kleiner dan.
+- `-like` is gelijk aan maar accepteer ook * als een wildcard. (omgekeerd is `-notlike`).
+- `match` vergelijkt een string of tekst en een regulier expressie patroon. (omgekeerd `-notmatch`).
+
+Voor string vergelijkingen kan je `c` voor iedere operator plaatsen om deze hoofdletter gevoelig te maken.    
+Als je meerdere dingen tegelijk wilt vergelijk kun je Boolean operatoren gebruiken.
+Deze operatoren worden meestal gebruikt met de cmdlet `Where-Object` of  `Where` in de pipeline.
+
+##H12 Practical interlude##
+
+Synopsis van alles dat tot nu toe in het boek behandeld is, hiervan heb ik dus geen samenvatting gemaakt.
+
+##H13 Remote control##
+
