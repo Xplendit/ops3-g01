@@ -10,4 +10,7 @@
 - Bestanden vergelijken: `Diff` of `Compare-Object`
 - Pipen naar Hmtl: gebruik `Convert-To-HTML`
 - Shell setting voor impact level bekijken: `$confirmpreference`
--  
+-  `-verbose` toont wat het commando doet.
+-  `Sort-Object` of `sort` sorteert. 
+-  `Select-proprety -expand` + proprety. Neemt het proprety, en retourneert de waardes hiervan als output.
+-  `Out-Gridview` Toont de output in een apart venster.
