@@ -62,6 +62,8 @@
 - Monitoring afwerken
 - Documentatie bijwerken
 ### Jordi
+- Lampstack met nginx maken
+- 
 
 ## Waar hebben jullie nog problemen mee?
 

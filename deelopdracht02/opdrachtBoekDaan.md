@@ -30,7 +30,7 @@ Je kan ook op meerdere kolommen sorteren met het commando: `Get-Service | sort s
 
 ###Grouping output after sorting###
 
-Achter dat je gesorteerd hebt, kan je de uitkomst ook nog eens sorteren. Om het het aantal running of stopped services te groeperen gebruik je het *Get-Service* commando voor het ontvangen van de service objects. Pipeline het resultaat van de service objects met het *Sort-Object status* commando en sorteer op status. Tot slot gebruik je het *Group-Object -Property status* commando als je wilt groeperen op status.
+Achter dat je gesorteerd hebt, kan je de uitkomst ook nog eens sorteren. Om het aantal running of stopped services te groeperen gebruik je het *Get-Service* commando voor het ontvangen van de service objects. Pipeline het resultaat van de service objects met het *Sort-Object status* commando en sorteer op status. Tot slot gebruik je het *Group-Object -Property status* commando als je wilt groeperen op status.
 
 ![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/2.PNG)
 
@@ -62,7 +62,7 @@ Het leuke aan PowerShell ISE is dat je gestructureerd een script kan schrijven e
 
 ## Chapter 11 Using Windows PowerShell scripts ##
 
-Om een PowerShell script uit te voeren kan je niet zomaar dubbel klikken op het script. Je kan ook nie enkel de naam van het script invullen bij de Run dialog box. Je kan enkel PowerShell scripts runnen als je de execution policy hebt enabled, maar je moet wel het hele pad intypen van je script om het te kunnen runnen ook het .ps1 gedeelte moet erbij.
+Om een PowerShell script uit te voeren kan je niet zomaar dubbel klikken op het script. Je kan ook niet enkel de naam van het script invullen bij de Run dialog box. Je kan enkel PowerShell scripts runnen als je de execution policy hebt enabled, maar je moet wel het hele pad intypen van je script om het te kunnen runnen ook het .ps1 gedeelte moet erbij.
 
 ![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/9.PNG)
 
@@ -184,7 +184,7 @@ Als je niet wilt dat de code achter de loop statement nog uitgevoerd wordt dan g
     }
     "Statement following foreach loop"
 
-De uitvoer van dit script is enkel de waarde 1 en 2 die afgedrukt wordt. Dit komt omdat je het exit statement gebruikt en Statement following foreach loop wordt niet meer uitgevoerd en dus ook nie weergeven.
+De uitvoer van dit script is enkel de waarde 1 en 2 die afgedrukt wordt. Dit komt omdat je het exit statement gebruikt en Statement following foreach loop wordt niet meer uitgevoerd en dus ook niet weergeven.
 
     1
     2

@@ -1,0 +1,11 @@
+# host_vars/lampstacknginx.yml
+---
+mariadb_databases:
+  - wordpress
+
+mariadb_users:
+  - name: user
+    password: WopWop
+    priv: 'wordpress.*:ALL'
+
+mariadb_root_password: WopWop

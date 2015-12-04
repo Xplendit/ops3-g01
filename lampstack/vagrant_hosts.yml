@@ -38,15 +38,8 @@
 - name: monisrv
   ip: 192.168.56.11
   
-- name: lampstacknginx
+- name: database
   ip: 192.168.56.78
-  synced_folders:
-    - src: www
-      dest: /var/www/html
-      options:
-        :owner: root
-        :group: root
-        :mount_options: ['dmode=0755', 'fmode=0644']
 
 
 

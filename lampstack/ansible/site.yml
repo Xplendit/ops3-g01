@@ -16,8 +16,9 @@
   roles:
     - bertvv.el7
     - bertvv.collectd
-	
-- hosts: lampstacknginx
+
+- hosts: database
   sudo: true
   roles:
-   - ansible-roles
+   - bertvv.el7
+   - bertvv.mariadb
