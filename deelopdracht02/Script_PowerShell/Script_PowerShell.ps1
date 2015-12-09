@@ -116,15 +116,15 @@ function Add-Operator {
     }
 }
 
-
+#verwijderd bij Femke van de Vorst haar profilepath
 function Remove-SharingProfile{
 [cmdletbinding()]
 param(
-[string]$naam = "Femke Van de Vorst"
+[string]$ou = "CN=Femke Van de Vorst,OU=Beheerders,OU=AsAfdelingen,Dc=Assengraaf,Dc=nl",
+[string]$properties = "ProfilePath"
 )
-set-ADUser -Identity $naam -ProfilePath ""
+Get-ADUser -Filter * -SearchBase $ou -Properties $properties | Set-ADUser -ProfilePath " " 
 }
-
 
 #Printerstatus van de XPS printer 
 function Set-PrinterStatus {
@@ -139,6 +139,8 @@ function Set-PrinterStatus {
 }
 
 
-
-
+function Install-WSUS {
+   Install-WindowsFeature -Name updateservices -IncludeManagementTools
  
+   New-Item -Path E: -Name WSUS -ItemType Directory
+}
