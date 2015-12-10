@@ -1,0 +1,55 @@
+# roles/collectd/tasks/common.yml
+# Tasks that are common to servers and clients
+---
+
+- name: Ensure the EPEL repository is available
+  yum:
+    pkg: epel-release
+    state: installed
+  tags: collectd
+
+- name: Install packages for collectd
+  yum:
+    pkg: " collectd "
+    state: installed
+  tags: collectd
+
+- name: Ensure the collectd service is started
+  service:
+    name: " collectd "
+    state: started
+    enabled: true
+  tags: collectd
+
+- name: Install main configuration file
+  template:
+    src: etc_collectd.conf.j2
+    dest: "/etc/collectd.conf"
+    validate: "collectd -t -C %s"
+  notify: restart collectd
+  tags: collectd
+
+- name: Install network configuration file
+  template:
+    src: etc_collectd.d_network.conf.j2
+    dest: "/etc/collectd.d/network.conf"
+    validate: "collectd -t -C %s"
+  notify: restart collectd
+  tags: collectd
+  
+- name: Install mysql configuration file
+  template:
+    src: etc_collectd.d_mysql.conf.j2
+    dest: "/etc/collectd.d/mysql.conf"
+    validate: "collectd -t -C %s"
+  notify: restart collectd
+  tags: collectd
+  
+- name: Install ping configuration file
+  template:
+    src: etc_collectd.d_ping.conf.j2
+    dest: "/etc/collectd.d/ping.conf"
+    validate: "collectd -t -C %s"
+  notify: restart collectd
+  tags: collectd
+

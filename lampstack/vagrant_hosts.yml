@@ -40,6 +40,9 @@
   
 - name: database
   ip: 192.168.56.78
+  
+- name: monitor
+  ip: 192.168.56.12
 
 
 

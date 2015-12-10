@@ -1,0 +1,29 @@
+
+FQDNLookup  true
+BaseDir     "/var/lib/collectd/"
+PIDFile     "/var/run/collectd.pid"
+Server      "192.168.56.12"
+
+
+##############################################################################
+# Logging                                                                    #
+##############################################################################
+
+
+LoadPlugin syslog
+<Plugin syslog>
+  LogLevel notice
+</Plugin>
+
+
+##############################################################################
+# LoadPlugin section                                                         #
+##############################################################################
+
+LoadPlugin cpu
+LoadPlugin load
+
+Include "/etc/collectd.d/*.conf"
+
+
+

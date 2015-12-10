@@ -1,0 +1,7 @@
+graphite_host: 
+  - lampstack
+  
+collectd_plugins:
+  - mysql
+  - ping
+  

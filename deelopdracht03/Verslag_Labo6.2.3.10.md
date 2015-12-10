@@ -2,6 +2,8 @@
 
 ### Stappenplan
 
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht03/lab6.2.3.10.PNG)
+
 Zet de opstelling op zoals in de opgave en kopieer de configuraties naar de juiste routers.
 
 1. Vergelijk de configuratie van de router met de gegevens. Dit doe je door het commando `sh run` (show running config) op de router uit te voeren. 

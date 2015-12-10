@@ -1,0 +1,16 @@
+# Config file for Collectd plugin mysql
+#
+# {{ ansible_managed }}
+
+LoadPlugin mysql
+
+<Plugin "mysql">
+  <Database "wordpress">
+    Host "lampstack"
+    User "user"
+    Password "WopWop"
+    Port 3306
+    ConnectTimeout 10
+  </Database>
+  
+</Plugin>

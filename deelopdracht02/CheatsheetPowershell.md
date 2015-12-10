@@ -14,3 +14,6 @@
 -  `Sort-Object` of `sort` sorteert. 
 -  `Select-proprety -expand` + proprety. Neemt het proprety, en retourneert de waardes hiervan als output.
 -  `Out-Gridview` Toont de output in een apart venster.
+-  `Invoke-WmiMethod` voert een methode van een WMI object uit.
+-  `Invoke-CimMethod` voert een methode van een CIM object uit.
+-  `Get-ExecutionPolicy` toont de huidige execution policy.

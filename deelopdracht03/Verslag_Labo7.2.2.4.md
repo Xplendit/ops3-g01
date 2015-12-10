@@ -2,6 +2,8 @@
 
 ### Stappenplan
 
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht03/lab7.2.2.4.PNG)
+
 ### R1
 
 		en

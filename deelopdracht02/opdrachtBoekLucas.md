@@ -116,7 +116,7 @@ Als je een file creëert met `Export-` dan is het best om dit te lezen via `Impo
 Er zijn 2 soorten extensies in PowerShell: modules en snap-ins. 
 
 1. Snap-ins (`PSSnapin`)       
-	- Bestaat uit één of meer DLL files samen met extra XML files die configuratie settings en help text bevatten. Snap-ins moeten geinstalleerd en geregistreerd zijn voor PowerShell ze herkent.
+	- Bestaat uit één of meer DLL files samen met extra XML files die configuratie settings en help text bevatten. Snap-ins moeten geïnstalleerd en geregistreerd zijn voor PowerShell ze herkent.
 	- `get-pssnapin -registered`toont alle beschikbare snap-ins.
 	- `add-pssnapin ` + naam van de snap-in.
 	- Wordt minder en minder gebruikt.
@@ -139,11 +139,11 @@ Windows is een object georiënteerde OS dus is het makkelijk om data te structur
 
 ##H9 De pipeline, dieper
 
-**Pipeline parameter binding** is de benaming voor het process dat Powershell gebruikt om te achterhalen welke parameter van een commando de output van een ander commando accepteert. Powershell gebruikt hiervoor 2 methodes.
+**Pipeline parameter binding** is de benaming voor het proces dat Powershell gebruikt om te achterhalen welke parameter van een commando de output van een ander commando accepteert. Powershell gebruikt hiervoor 2 methodes.
 
 ###Pipeline input ByValue###
 
-Powershell kijkt naar het type van object geproduceert door commandoA en kijkt of er een parameter van commandoB is dat dit type accepteert.
+Powershell kijkt naar het type van object geproduceerd door commandoA en kijkt of er een parameter van commandoB is dat dit type accepteert.
 Je kan dit zelf checken door de output van commando A te pipen naar `Get-Member`. Hier kun je zien welk type object commandoA produceert en dit vergelijk je dan met de full help van commandoB om te zien of er parameter zijn die dat soort data accepteren. 
 
 ![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/Lucas/H9_byValue.PNG)
@@ -159,8 +159,8 @@ Werkt gelijkaardig als ByValue maar hierbij is het mogelijk om meerdere paramete
 ![](https://github.com/HoGentTIN/ops3-g01/blob/master/deelopdracht02/img/Lucas/H9_cusPro.PNG)
 
 * Selecteert alle bestaande properties 
-* Creëert een hast tabel. Begint met `@{` en eindigt met `}`. 
-* De hast tabel bestaat uit één of meer key=value paren, select-object is geprogrammeerd om naar specifieke keys te zoeken.
+* Creëert een hash tabel. Begint met `@{` en eindigt met `}`. 
+* De hash tabel bestaat uit één of meer key=value paren, select-object is geprogrammeerd om naar specifieke keys te zoeken.
 * De eerste key kan `Name,N,Label` of `L` zijn. De waarde hiervan is de naam van de proprety die we willen aanmaken.
 * De tweede key kan `Expression` of `E` zijn. De waarde hiervan is een script block die tussen {} staat. Hiertussen gebruik je de `$_` placeholder om naar het bestaande object in de pipeline te referen, gevolgd door een '.'. Dit laat je een proprety van het object in de pipeline of een kolum van CSV file vastpakken. Dit specificeert de content van de nieuwe proprety.
 
@@ -248,7 +248,7 @@ Hiermee kun je een commando naar verschillende computers tegelijk sturen. Dit ge
 		➥Where { $_.EventID -eq 1212 }}
 
 (De -command parameter is een alias voor de -scriptbook parameter.)   
-Je kunt de computernamen ook allemaal in een tekstfile steken en deze dan tegelijk ophalen door:
+Je kunt de computernamen ook allemaal in een tekstbestand steken en deze dan tegelijk ophalen door:
 
 		Invoke-Command -command { dir }
 		➥-computerName (Get-Content webservers.txt)
@@ -261,7 +261,7 @@ Of je kan filteren zoals bijvoorbeeld:
 
 ###Enkele tips
 
-1. Door het `-SessionOption` kan je een set van opties meegeven die de manier waarop de sessie gecreëerd wordt specificeren. Deze parameter accepteer een PSSessionOption opbject.     
+1. Door het `-SessionOption` kan je een set van opties meegeven die de manier waarop de sessie gecreëerd wordt specificeren. Deze parameter accepteer een PSSessionOption object.     
 Hier open je een sessie en sla je de naam check over: 
 
 		PS C:\> Enter-PSSession -ComputerName DONJONESE408
@@ -270,7 +270,7 @@ Hier open je een sessie en sla je de naam check over:
 
 
 2. Remoting werkt alleen met de remote computer zijn echte naam.    
-3. Remoting is ontworpen om min of meer automatisch te configureren binnen een domein. Als alle computers en jouw user account zich in hetzelfde (of vertrouwde) domein bevinden zal alles normaal goed verlopen.  
+3. Remoting is ontworpen om min of meer automatisch te configureren binnen een domein. Als alle computers en jouw gebruiker account zich in hetzelfde (of vertrouwde) domein bevinden zal alles normaal goed verlopen.  
 4. PowerShell wordt automatisch geopend en gesloten voor ieder nieuw commando dat je naar de remote computer stuurt. Als je een hele reeks gerelateerde commando's wilt runnen doe je dit best allemaal in één commando.
 5. Zorg er absoluut voor dat je PowerShell als een administrator aan het runnen bent.
 6. Bij andere firewallen dan de basis Windows Firewall zet remoting niet automatisch de nodige firewall excepties op. Die moet je dan manueel doen.
@@ -299,7 +299,7 @@ Gwmi accepteert ook de `-filter` parameter om de output meer te filteren.
 ## Get-CimInstance
 
 Werkt gelijkaardig als Gwmi maar er zijn enkele verschillen:
-	* je gebruikte `-ClassName` ipv `-Class`)
+	* je gebruikte `-ClassName` in plaats van `-Class`)
 	* Er is geen `-List` parameter, in plaats daarvan gebruik je `Get-CimClass` en de `-Namespace` om klassen te listen.
 	* Er is geen `-Credential` parameter
 
@@ -364,7 +364,7 @@ Bij de Invoke-Command cmdlet kan je ook een -AsJob parameter meegeven. Het comma
 		Warning : {}
 
 `Receive-Job` wordt gebruikt om de resultaten van een job op te halen. Maar voor je dit runt moet je op enkele zaken letten.
-	* Je moet een job speciferen. Dit kan door de job ID of job name mee te geven of door de output van Get-Job te pipen naar Receive-Job.
+	* Je moet een job specificeren. Dit kan door de job ID of job name mee te geven of door de output van Get-Job te pipen naar Receive-Job.
 	* De resultaten van de parent-job zullen ook de resultaten van alle child-jobs bevatten.
 	* Normaal gezien wordt de job uit de job output cache gehaald als je de resultaten opvraagt, dus je kan ze geen tweede keer opvragen. Door `-keep` te gebruiken hou je een kopie bij in het geheugen of je kan de resultaten naar CliXML sturen om zo een kopie bij te houden.
 	* Het resultaat kan een gedeserializeerd object zijn.
@@ -398,3 +398,163 @@ Voor elk kan je een job specificeren door ofwel de ID of de naam of de job nemen
 
 ## H16 Werken met veel objecten, één per één
 
+Het doel is om sommige taken meerder keren uitgevoerd te laten worden. Dit wordt vooral gebruikt in scripts maar kan ook via PowerShell zelf. Een voorbeeld is de `For Each`. 
+
+		For Each varService in colServices
+		varService.ChangeStartMode("Automatic")
+		Next
+
+In PowerShell kun je dit verkrijgen door `For-Each-Object`.
+
+		Get-WmiObject Win32_Service -filter "name = 'BITS'" |
+		➥ForEach-Object -process {
+		➥ $_.change($null,$null,$null,$null,$null,$null,$null,"P@ssw0rd")
+		➥}
+
+Dit voert voor een groep services één per één een commando uit. Deze manier zorgt ervoor dat de computer een langere en gecompliceerde set van instructies nodig heeft. PowerShell heeft hiervoor twee gemakkelijkere technieken.
+
+### batch cmdlets
+
+Veel commando's kunnen werken met verzamelingen van objecten. 
+		
+		Get-Service -name BITS,Spooler,W32Time -computer Server1,Server2,Server3 |
+		Set-Service -startuptype Automatic
+Een nadeel hiervan is dat er geen ouput gemaakt wordt die aantoont dat het commando klaar is. Dit kan verholpen worden met de `-passThru` parameter. Deze laat hun alle objecten die ze geaccepteerd hebben als input outputten. 
+
+		Get-Service -name BITS -computer Server1,Server2,Server3 |
+		Start-Service -passthru |
+		Out-File NewServiceStatus.txt
+
+### Invoke-WMI
+
+Het batchen werkt niet altijd, dit werkt bijvoorbeeld niet met de WMI. `Invoke-WmiMethod` is een generieke cmdlet die ontwikkelt is om batches van WMI objecten te accepteren en om één van de geaccepteerde methodes uit te voeren.
+
+		PS C:\> gwmi win32_networkadapterconfiguration
+		➥-filter "description like '%intel%'" |
+		➥Invoke-WmiMethod -name EnableDHCP
+
+Enkele tips:
+	* De methode naam wordt niet gevolgd door haakjes.
+	* De methode naam is niet hoofdlettergevoelig.
+	* `Invoke-WmiMethod` kan maar één soort WMI object tegelijk accepteren. 
+	* Je kan `-WhatIf` en `-Confirm` gebruiken.
+
+Dit werkt ook met Cim op dezelfde manier.
+		
+		PS C:\> Get-CimInstance -classname win32_networkadapterconfiguration
+		➥-filter "description like '%intel%'" |
+		➥Invoke-CimMethod -methodname EnableDHCP
+
+##H17 Beveiliging
+
+
+### Beveiligingsdoelen van PowerShell
+
+* PowerShell voegt geen extra lagen van permissies toe. PowerShell zal u dus alles laten doen wat je al mag doen. 
+* PowerShell is geen manier om bestaande permissies te omzeilen. 
+* Het beveiligingssysteem is niet ontworpen om iemand te weerhouden van commando's die ze mogen uitvoeren uit te voeren.
+* PowerShell is ook geen verdediging tegen malware.
+
+### Execution policy
+
+Dit is de eerste beveiligingsmethode van PowerShell. Dit is een instelling die over de hele machine geldig is en die beheert welke scripts uitgevoerd kunnen worden. Dit is om ervoor te zorgen dat gebruikers niet per ongeluk een een script runnen.
+
+De default setting is `Restricted` en dit zorgt er voor dat er helemaal geen scripts kunnen uitgevoerd worden. Dit kan aangepast worden door:
+- `Set-ExecutionPolicy`
+- Door een GPO te gebruiken
+- Door bij een commando `-ExecutionPolicy` te gebruiken.
+
+Er zijn 5 mogelijke settings:
+* `Restricted` scripts worden niet uitgevoerd.
+* `Allsigned` alle scripts die digitaal getekend zijn mbhv. een code-singing certificaat gemaakt door een betrouwbare Certification Authority (CA) mogen uitgevoerd worden.
+* `RemoteSigned` alle lokale scripts en vertrouwde remote scripts worden uitgevoerd.
+* `Unrestricted` alle scripts kunnen uitgevoerd worden.
+* `Bypass` dit is voor applicatie ontwikkelaars die PowerShell in hun applicatie steken.
+
+### Andere beveiliging
+
+PowerShell heeft nog twee andere belangrijke beveiligingsmethodes die altijd in werking zijn.
+
+* Windows ziet .PS1 (PowerShell scripts) bestanden niet als executeerbare bestanden. 
+* Je kunt geen script in de shell runnen door zijn naam te typen.
+
+## H18 Variabelen
+
+Dit hoofdstuk werd al behandeld vorige jaren en wordt herhaald in de andere samenvattingen.
+
+Enkele handige herhalingen:
+* Variabele begint met `$` en kan zowel enkele objecten als arrays bevatten.
+* `$_` is de huidige variabele in de pipeline.
+* Je kan de dot notatie gebruiken om aan property's te geraken. `$_.Name`
+* Alles binnen een `$()` wordt gezien als een normaal PowerShell commando.
+		
+		PS C:\> $services = get-service
+		PS C:\> $firstname = "The first name is $($services[0].name)"
+		PS C:\> $firstname
+		The first name is AeLookupSvc
+* Je kan variabelen een type opleggen door het typte tussen [] ervoor te plaatsen
+
+		PS C:\> [int]$number = Read-Host "Enter a number"
+		Enter a number: 100
+
+## H19 Input en output
+
+### Read-Host
+
+Dit cmdlet is ontworpen om een tekst prompt te tonen en de input van de gebruiker te collecteren. 
+
+		PS C:\> read-host "Enter a computer name"
+		Enter a computer name: SERVER-R2
+		SERVER-R2
+
+Dit wordt vaak gebruikt met variabelen zoals in je kan zien in het vorige hoofdstuk.
+
+### Write-Host
+
+Dit cmdlet laat je output op het scherm tonen. Je kan ook de kleur van de voor- en achtergrond veranderen. 
+
+		PS C:\> write-host "COLORFUL!" -fore yellow -back magenta
+		COLORFUL!
+
+Dit wordt niet te veel gebruikt en best alleen als je een specifieke boodschap wilt laten tonen.
+
+### Write-Output
+
+Dit cmdlet kan objects naar de pipeline sturen en wordt meestal zelf niet gebruikt om output te tonen. De pipeline zelf zal uiteindelijk de output tonen.
+
+		PS C:\> write-output "Hello" | where-object { $_.length -gt 10 }
+
+### Andere manieren
+
+* `Write-Warning` toont een waarschuwingstekst.
+* `Write-Verbose` toont extra informatieve tekst.
+* `Write-Debug` toont debugging tekst.
+* `Write-Error` toont een error message.
+
+##H20 Sessies: remote control met minder werk
+
+		PS C:\> new-pssession -computername server-r2,server17,dc5
+		PS C:\> get-pssession
+		
+		PS C:\> $iis_servers = new-pssession -comp web1,web2,web3
+		➥-credential WebAdmin
+
+		PS C:\> $iis_servers | remove-pssession
+
+##H21 Scripting
+
+Basisidee is om het telkens opnieuw uitvoeren van een bepaald commando simpeler te maken.
+
+Dit wordt al besproken in de andere samenvattingen.
+
+##H22 Script verbeteren
+
+Wordt ook al besproken in de andere samenvattingen.
+
+##H23 Geadvanceerd remoting en H24 Regex gebruiken
+
+Veel van deze stof is herhaling of gedetailleerd uitwerken wat we al eerder gezien hebben.
+
+##H24 en H25
+
+Sammenvatting van het boek.
