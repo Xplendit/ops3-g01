@@ -1,7 +1,7 @@
 ##Tesplan en -rapport: boek PowerShell 
 
 * Verantwoordelijke uitvoering: Daan
-* Verantwoordelijke testen: 
+* Verantwoordelijke testen: Lucas
 
 
 ###Testplan
@@ -25,17 +25,17 @@ Auteur(s) testplan: Daan
 
 #### Testen rapport ####
 
-- [ X ] Boek gekozen
-- [ X ] Hoofdstuk 1 gelezen 
-- [ X ] Hoofdstuk 2 gelezen 
-- [ X ] Hoofdstuk 3 gelezen en gedocumenteerd
-- [ X ] Hoofdstuk 4 gelezen 
-- [ X ] Hoofdstuk 5 gelezen 
-- [ X ] Hoofdstuk 6 gelezen
-- [ X ] Hoofdstuk 7 gelezen 
-- [ X ] Hoofdstuk 8 gelezen 
-- [ X ] Hoofdstuk 9 gelezen 
-- [ X ] Hoofdstuk 10 gelezen en gedocumenteerd
-- [ X ] Hoofdstuk 11 gelezen en gedocumenteerd
-- [ X ] Hoofdstuk 12 gelezen en gedocumenteerd
-- [ X ] Spellingscontrole
+- [X] Boek gekozen
+- [X] Hoofdstuk 1 gelezen 
+- [X] Hoofdstuk 2 gelezen 
+- [X] Hoofdstuk 3 gelezen en gedocumenteerd
+- [X] Hoofdstuk 4 gelezen 
+- [X] Hoofdstuk 5 gelezen 
+- [X] Hoofdstuk 6 gelezen
+- [X] Hoofdstuk 7 gelezen 
+- [X] Hoofdstuk 8 gelezen 
+- [X] Hoofdstuk 9 gelezen 
+- [X] Hoofdstuk 10 gelezen en gedocumenteerd
+- [X] Hoofdstuk 11 gelezen en gedocumenteerd
+- [X] Hoofdstuk 12 gelezen en gedocumenteerd
+- [X] Spellingscontrole

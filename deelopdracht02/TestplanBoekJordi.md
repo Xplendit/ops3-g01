@@ -1,7 +1,7 @@
 ##Tesplan en -rapport: boek PowerShell 
 
 * Verantwoordelijke uitvoering: Jordi
-* Verantwoordelijke testen: 
+* Verantwoordelijke testen: Daan
 
 
 ###Testplan
@@ -51,3 +51,43 @@ Auteur(s) testplan: Jordi
 Onder documenteren verstaan we een samenvatting gemaakt van het hoofdstuk
 
 #### Testen rapport ####
+
+- [x] Boek gekozen
+- [x] Hoofdstuk 1
+	- [x] Gelezen
+	- [x] Gedocumenteerd
+- [x] Hoofdstuk 2 
+	- [x] Gelezen
+	- [x] Gedocumenteerd
+- [x] Hoofdstuk 3
+	- [x] Gelezen
+	- [x] Gedocumenteerd
+- [x] Hoofdstuk 4
+	- [x] Gelezen
+	- [x] Gedocumenteerd
+- [x] Hoofdstuk 5 
+	- [x] Gelezen
+	- [x] Gedocumenteerd
+- [x] Hoofdstuk 6 
+	- [x] Gelezen
+	- [x] Gedocumenteerd
+- [x] Hoofdstuk 7 
+	- [x] Gelezen
+	- [x] Gedocumenteerd
+- [x] Hoofdstuk 8 
+	- [x] Gelezen
+	- [x] Gedocumenteerd
+- [x] Hoofdstuk 9 
+	- [x] Gelezen
+	- [x] Gedocumenteerd
+- [x] Hoofdstuk 10
+	- [x] Gelezen
+	- [x] Gedocumenteerd
+- [x] Hoofdstuk 11
+	- [x] Gelezen
+	- [x] Gedocumenteerd
+- [x] Hoofdstuk 12 
+	- [x] Gelezen
+	- [x] Gedocumenteerd
+- [x] Spellingscontrole
+- [x] Cheatsheet aanwezig

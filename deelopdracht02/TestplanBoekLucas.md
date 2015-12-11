@@ -1,7 +1,7 @@
 ##Tesplan en -rapport: boek PowerShell 
 
 * Verantwoordelijke uitvoering: Lucas
-* Verantwoordelijke testen: 
+* Verantwoordelijke testen: Daan
 
 
 ###Testplan
