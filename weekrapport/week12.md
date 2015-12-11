@@ -1,14 +1,14 @@
-# Voortgangsrapport week nn
+# Voortgangsrapport week 12
 
-* Groep:
-* Datum:
+* Groep:03
+* Datum:11/12/2015
 
 | Student  | Aanw. | Opmerking |
 | :---     | :---  | :---      |
-| student1 |       |           |
-| student2 |       |           |
-| student3 |       |           |
-| student4 |       |           |
+| Daan |       |           |
+| Lara |       |           |
+| Jordi |       |           |
+| Lucas |       |           |
 
 ## Wat heb je deze week gerealiseerd?
 
@@ -21,25 +21,25 @@
 
 [Afbeelding teamoverzicht tijdregistratie onderverdeeld per deelopdracht]
 
-### Student 1
+### Daan
 
 * ...
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 2
+### Lara
 
 * ...
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 3
+### Jordi
 
 * ...
 
 [Afbeelding individueel rapport tijdregistratie]
 
-### Student 4
+### Lucas
 
 * ...
 
@@ -48,10 +48,10 @@
 ## Wat plan je volgende week te doen?
 
 ### Algemeen
-### Student 1
-### Student 2
-### Student 3
-### Student 4
+### Daan
+### Lara
+### Jordi
+### Lucas
 
 ## Waar hebben jullie nog problemen mee?
 
@@ -62,9 +62,9 @@
 
 ### Algemeen
 
-### Student 1
-### Student 2
-### Student 3
-### Student 4
+### Daan
+### Lara
+### Jordi
+### Lucas
 
 
