@@ -31,13 +31,16 @@
 
 ### Lara
 
-* ...
+* cisco
+* testing
 
 [Afbeelding individueel rapport tijdregistratie]
 
 ### Jordi
 
-* ...
+* cisco testplan
+* databse op een aparte vm zetten
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week12_Jordi_toggle.PNG)
 
 [Afbeelding individueel rapport tijdregistratie]
 

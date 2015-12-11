@@ -22,4 +22,5 @@
   roles:
    - bertvv.el7
    - bertvv.mariadb
- 
+   - phpmyadmin
+   - bertvv.httpd
