@@ -42,3 +42,36 @@ Auteur(s) testplan: Lucas
 - [ ] Spellingscontrole
 
 #### Testen rapport ####
+
+- [x] Boek gekozen
+- [x] Hoofdstuk 1 gelezen (Inleiding)
+- [x] Hoofdstuk 2 gelezen (Inleiding)
+- [x] Hoofdstuk 3 gelezen en gedocumenteerd
+- [x] Hoofdstuk 4 gelezen en gedocumenteerd 
+- [x] Hoofdstuk 5 gelezen en gedocumenteerd
+- [x] Hoofdstuk 6 gelezen en gedocumenteerd
+- [x] Hoofdstuk 7 gelezen en gedocumenteerd
+- [x] Hoofdstuk 8 gelezen en gedocumenteerd
+- [x] Hoofdstuk 9 gelezen en gedocumenteerd
+- [x] Hoofdstuk 10 gelezen en gedocumenteerd
+- [x] Hoofdstuk 11 gelezen en gedocumenteerd
+- [x] Hoofdstuk 12 gelezen en gedocumenteerd
+- [x] Hoofdstuk 13 gelezen en gedocumenteerd
+- [x] Hoofdstuk 14 gelezen en gedocumenteerd
+- [x] Hoofdstuk 15 gelezen en gedocumenteerd
+- [x] Hoofdstuk 16 gelezen en gedocumenteerd
+- [x] Hoofdstuk 17 gelezen en gedocumenteerd
+- [x] Hoofdstuk 18 gelezen en gedocumenteerd
+- [x] Hoofdstuk 19 gelezen en gedocumenteerd
+- [x] Hoofdstuk 20 gelezen en gedocumenteerd
+- [x] Hoofdstuk 21 gelezen en gedocumenteerd
+- [x] Hoofdstuk 22 gelezen en gedocumenteerd
+- [x] Hoofdstuk 23 gelezen en gedocumenteerd
+- [x] Hoofdstuk 24 gelezen en gedocumenteerd
+- [x] Hoofdstuk 25 gelezen en gedocumenteerd
+- [x] Hoofdstuk 26 gelezen en gedocumenteerd
+- [x] Hoofdstuk 27 gelezen en gedocumenteerd
+- [x] Hoofdstuk 28 gelezen en gedocumenteerd
+- [x] Scripts gedocumenteerd en gecontroleerd
+- [x] Cheatsheet commando's opgesteld en gecontroleerd
+- [x] Spellingscontrole
