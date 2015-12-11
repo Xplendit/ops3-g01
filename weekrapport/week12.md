@@ -23,9 +23,11 @@
 
 ### Daan
 
-* ...
+* Powershell testplan gemaakt
+* cisco packetracer gemaakt
+* script optimaliseren
 
-[Afbeelding individueel rapport tijdregistratie]
+![](https://github.com/HoGentTIN/ops3-g01/blob/master/weekrapport/img/Week12_Daan_toggle.PNG)
 
 ### Lara
 
