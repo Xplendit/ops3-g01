@@ -31,7 +31,8 @@
 
 ### Lara
 
-* ...
+* cisco
+* testing
 
 [Afbeelding individueel rapport tijdregistratie]
 
